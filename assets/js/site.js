@@ -521,6 +521,13 @@
     const chipRow = $("#experience-filters");
     if (!chipRow) return;
 
+    // A filter offering a single choice is just noise — hide it until there
+    // are at least two kinds of experience to switch between.
+    if (kinds.length < 2) {
+      chipRow.hidden = true;
+      return;
+    }
+
     chipRow.innerHTML =
       '<button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>' +
       kinds
