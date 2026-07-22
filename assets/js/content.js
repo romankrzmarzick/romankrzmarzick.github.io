@@ -3,8 +3,8 @@
    Everything below feeds the pages automatically. Add, remove, or reorder
    items freely; the site re-renders around whatever is here.
 
-   Anything marked  SAMPLE  is a placeholder I invented so the page looks
-   finished. Replace or delete those. Real details you gave me are already in.
+   Everything in here is real. If you add something, keep it that way — this
+   file is what strangers read about you.
    ========================================================================= */
 
 const SITE = {
