@@ -1,1 +1,139 @@
 # romankrzmarzick.github.io
+
+Personal portfolio site for **Roman Krzmarzick** — mechanical engineering student at
+St. Ambrose University, Davenport, Iowa.
+
+Live at **https://romankrzmarzick.github.io**
+
+Hand-built static site: no framework, no build step, no dependencies. Push to `main` and
+GitHub Pages serves it within a minute.
+
+---
+
+## Updating the site
+
+**Almost everything lives in one file: [`assets/js/content.js`](assets/js/content.js).**
+
+Open it, edit the text, save, commit, push. The pages rebuild themselves around whatever
+is in there — add a project and it appears on Projects *and* the homepage; add a blog post
+and it appears on Blog with its own page.
+
+| What you want to change | Where |
+| --- | --- |
+| Name, tagline, email, socials | `SITE` — top of `content.js` |
+| Homepage intro + quick facts | `SITE.home` |
+| Bio, goals, timeline, interests | `SITE.about` |
+| Skills lists | `SITE.skills` |
+| Projects | `SITE.projects` |
+| Work / leadership / athletics | `SITE.experience` |
+| Résumé education + PDF path | `SITE.resume` |
+| Blog posts | `SITE.posts` |
+| Contact form endpoint | `SITE.contact` |
+| Colors, spacing, type | `assets/css/styles.css` (design tokens at the top) |
+
+### Adding a project
+
+Add an object to `SITE.projects`:
+
+```js
+{
+  title: "Project name",
+  year: "2027",
+  status: "Complete",           // Complete · Building · In progress · Live
+  blurb: "One or two sentences on what it is and what you learned.",
+  tags: ["CAD", "Hardware"],    // becomes a filter chip automatically
+  tech: ["Fusion 360", "PLA"],
+  featured: true,               // shows on the homepage (max 3)
+  image: "assets/img/my-project.jpg",   // optional — omit for a gradient card
+  links: {
+    repo: "https://github.com/...",     // any link you omit just doesn't render
+    live: "https://...",
+  },
+}
+```
+
+### Adding a blog post
+
+Add an object to the **top** of `SITE.posts` (newest first):
+
+```js
+{
+  slug: "url-friendly-name",
+  title: "Post title",
+  date: "2027-01-15",
+  readingTime: "4 min",
+  tags: ["Projects"],
+  excerpt: "The teaser shown on the blog index.",
+  body: [
+    { p: "A paragraph. Supports **bold**, *italic*, `code`, and [links](https://x.com)." },
+    { h: "A subheading" },
+    { list: ["Bullet one", "Bullet two"] },
+    { quote: "A pull quote." },
+    { code: "print('a code block')" },
+  ],
+}
+```
+
+The post is served at `post.html?p=url-friendly-name`.
+
+---
+
+## To-do list for Roman
+
+Things set up with placeholders — search `content.js` for the word **SAMPLE**:
+
+- [ ] **Replace the sample projects.** Only *Frogger* and *Personal Website* are real. Delete
+      the phone stand, Lift Log, and Arduino entries or swap in your actual work.
+- [ ] **Fill in Experience.** The soccer, summer job, and captain entries are invented —
+      replace with real ones or delete them.
+- [ ] **Fix your high school entry** in `SITE.about.timeline`.
+- [ ] **Add your LinkedIn URL** in `SITE.socials` (currently a placeholder link).
+- [ ] **Trim the skills list** to what you'd actually be comfortable being asked about.
+- [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
+      shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
+      *Save as PDF*) — which also works fine as a permanent solution.
+- [ ] **Hook up the contact form.** Sign up free at [formspree.io](https://formspree.io),
+      create a form, paste the endpoint into `SITE.contact.formEndpoint`. Until then the form
+      falls back to opening the visitor's email app with the message pre-filled.
+- [ ] *(Optional)* Replace `assets/img/og.svg` with a 1200×630 **PNG** — some sites
+      (LinkedIn, iMessage) won't render SVG link previews.
+
+---
+
+## Structure
+
+```
+index.html          Home — hero, featured projects, CTA
+about.html          Bio, goals, timeline, skills, interests
+projects.html       Searchable + filterable portfolio
+experience.html     Filterable timeline
+resume.html         Embedded PDF, or printable HTML résumé
+blog.html           Post index
+post.html           Single post (?p=slug)
+contact.html        Form + direct links
+404.html            Not-found page
+sitemap.xml         SEO
+robots.txt          SEO
+.nojekyll           Tells Pages to serve files as-is
+
+assets/
+  css/styles.css    All styling. Design tokens live at the top.
+  js/content.js     >>> ALL YOUR CONTENT <<<
+  js/site.js        Header, footer, theme, animations, page rendering
+  img/              favicon + link-preview image
+```
+
+## Local preview
+
+Open `index.html` in a browser, or run a local server for an exact match to production:
+
+```bash
+python -m http.server 8000
+```
+
+## Features
+
+Dark mode by default with a light toggle (remembers your choice, respects system setting) ·
+fully responsive · scroll-reveal animations that honor `prefers-reduced-motion` · keyboard
+accessible with skip link and visible focus rings · Open Graph + JSON-LD structured data ·
+zero dependencies, so it loads instantly.

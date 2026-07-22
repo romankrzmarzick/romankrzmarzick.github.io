@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post — Roman Krzmarzick</title>
+<meta name="description" content="An article from Roman Krzmarzick's blog on engineering, code, and learning.">
+<meta name="theme-color" content="#07080d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog — Roman Krzmarzick">
+<meta property="og:description" content="Project write-ups and notes on engineering and code.">
+<meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("rk-theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<script src="assets/js/content.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="post">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+
+  <article class="section">
+    <div class="container container--narrow">
+
+      <a class="read-more" href="blog.html" style="margin:0 0 1.5rem;transform:scaleX(-1);display:inline-flex">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:14px;height:14px"><path d="M13.17 5.17 11.76 6.59 16.17 11H4v2h12.17l-4.41 4.41 1.41 1.42L20 12l-6.83-6.83Z"/></svg>
+        <span style="transform:scaleX(-1)">All posts</span>
+      </a>
+
+      <div class="post-meta" id="post-meta"></div>
+      <h1 id="post-title" style="font-size:clamp(2rem,4.4vw,2.9rem);margin-bottom:2rem"></h1>
+
+      <div class="prose" id="post-body"></div>
+
+      <hr class="rule">
+
+      <div class="btn-row" id="post-nav" style="justify-content:space-between"></div>
+
+    </div>
+  </article>
+
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>
