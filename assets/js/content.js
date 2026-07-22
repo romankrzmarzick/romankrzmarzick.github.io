@@ -55,7 +55,7 @@ const SITE = {
     // Each string becomes a paragraph.
     bio: [
       "I'm Roman Krzmarzick, an incoming mechanical engineering freshman at St. Ambrose University in Davenport, Iowa. I chose mechanical engineering because I've always been the person who wants to know what's happening inside the box — how a mechanism carries load, why one design lasts and a nearly identical one doesn't.",
-      "Somewhere along the way I picked up programming, and it stuck. What started as curiosity turned into a habit of building small things end to end: sketching an idea, modeling it, writing the code that drives it, then finding out where my assumptions were wrong. Game development in Godot has been a surprisingly good teacher here — physics, collision, and state machines are engineering problems wearing a costume.",
+      "Somewhere along the way I picked up programming, and it stuck. What started as curiosity turned into a habit of building small things end to end and finding out where my assumptions were wrong. Most of that has been games — a platformer, an arcade shooter, Pong — which turn out to be a good teacher: physics, collision, and state machines are engineering problems wearing a costume.",
       "Outside of school I've played soccer for years and I lift seriously. Both are the same lesson in different clothes: consistent, boring work compounds, and progress is measured over seasons rather than days. That's roughly how I approach engineering too.",
     ],
 
@@ -63,7 +63,7 @@ const SITE = {
       {
         title: "Near term",
         body:
-          "Build a strong foundation in statics, dynamics, and materials while keeping my CAD and programming sharp on personal projects.",
+          "Build a strong foundation in statics, dynamics, and materials, and pick up CAD properly — while keeping my programming sharp on personal projects.",
       },
       {
         title: "During college",
@@ -88,18 +88,18 @@ const SITE = {
         current: true,
       },
       {
-        date: "2026",
-        title: "Graduated high school", // SAMPLE — add your school name and any honors.
-        org: "SAMPLE — replace with your high school",
+        date: "2025 — 2026",
+        title: "Building projects on my own",
+        org: "Self-directed",
         body:
-          "Finished coursework in math and science, played soccer, and spent free time on personal build-and-code projects.",
+          "Moved from following tutorials to finishing my own things — a platformer, an arcade shooter, a tic-tac-toe opponent, and my first real Git repositories.",
       },
       {
         date: "2025",
-        title: "Started building projects seriously", // SAMPLE
-        org: "Self-directed",
+        title: "Graduated high school",
+        org: "Pleasant Valley High School",
         body:
-          "Moved from following tutorials to shipping my own things — first game builds in Godot, first real Git repositories.",
+          "Finished coursework in math and science, played soccer, and spent free time teaching myself to code.",
       },
     ],
 
@@ -107,21 +107,19 @@ const SITE = {
     interests: [
       "Soccer",
       "Weightlifting",
-      "CAD & 3D printing",
       "Game development",
+      "Python",
       "Cars & mechanisms",
-      "Automation",
     ],
   },
 
   /* ---------- Skills ----------
-     Used on About and Resume. Groups render in order.                        */
+     Used on About and Resume. Groups render in order.
+     Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
-    // SAMPLE levels — trim anything you'd rather not claim yet.
-    { group: "Engineering", items: ["SolidWorks", "Fusion 360", "3D printing", "Technical drawing", "Hand tools & shop safety"] },
-    { group: "Programming", items: ["Python", "GDScript", "JavaScript", "HTML & CSS"] },
-    { group: "Tools", items: ["Git & GitHub", "Godot Engine", "MATLAB", "Excel"] },
-    { group: "Strengths", items: ["Problem decomposition", "Self-teaching", "Team communication", "Follow-through"] },
+    { group: "Programming", items: ["Python", "pygame", "GDScript"] },
+    { group: "Tools", items: ["Git & GitHub", "Godot Engine", "Tiled"] },
+    { group: "Strengths", items: ["Self-teaching", "Finishing what I start", "Problem decomposition"] },
   ],
 
   /* ---------- Projects ----------
@@ -212,38 +210,14 @@ const SITE = {
      Use: Work · Leadership · Athletics · Research · Volunteer               */
   experience: [
     {
-      // SAMPLE
+      // Add your team or club name as `org: "..."` and tighten `date` when you have them.
       kind: "Athletics",
-      date: "2022 — 2026",
-      title: "Varsity Soccer Player",
-      org: "SAMPLE — replace with your club or high school team",
+      date: "Through 2025",
+      title: "Soccer",
       current: false,
       bullets: [
-        "Played multiple seasons of competitive soccer, balancing daily practice and travel with a full academic load.",
+        "Played competitively through high school, balancing daily practice with a full academic load.",
         "Learned to communicate under pressure and hold a role inside a system rather than freelancing.",
-      ],
-    },
-    {
-      // SAMPLE
-      kind: "Work",
-      date: "Summer 2026",
-      title: "Summer Job",
-      org: "SAMPLE — replace with a real job, or delete this entry",
-      current: false,
-      bullets: [
-        "Held a consistent summer schedule while saving for college.",
-        "Worked directly with customers and teammates in a fast-paced environment.",
-      ],
-    },
-    {
-      // SAMPLE
-      kind: "Leadership",
-      date: "2025 — 2026",
-      title: "Team Captain",
-      org: "SAMPLE — delete if this doesn't apply",
-      current: false,
-      bullets: [
-        "Helped set training standards and kept younger players accountable during the season.",
       ],
     },
   ],
@@ -261,9 +235,16 @@ const SITE = {
         where: "Davenport, Iowa",
         date: "2026 — 2030 (expected)",
         bullets: [
-          // SAMPLE — add GPA, scholarships, or honors once you have them.
+          // Add GPA, scholarships, or honors once you have them.
           "Incoming freshman, Fall 2026.",
         ],
+      },
+      {
+        school: "Pleasant Valley High School",
+        degree: "High School Diploma",
+        where: "",
+        date: "Graduated 2025",
+        bullets: [],
       },
     ],
   },
