@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Roman Krzmarzick</title>
+<meta name="description" content="That page doesn't exist.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("rk-theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body data-page="404">
+
+<main id="main" style="display:grid;place-items:center;min-height:100vh;text-align:center">
+  <div class="container container--narrow">
+    <span class="eyebrow" style="justify-content:center">Error 404</span>
+    <h1 style="font-size:clamp(3rem,12vw,7rem);letter-spacing:-.05em">
+      <span class="grad-text">Nothing here.</span>
+    </h1>
+    <p class="lead" style="margin:1.25rem auto 0;max-width:38ch">
+      That page doesn't exist — it may have moved, or the link was mistyped.
+    </p>
+    <div class="btn-row" style="justify-content:center;margin-top:2rem">
+      <a class="btn btn-primary" href="/">Back home</a>
+      <a class="btn btn-ghost" href="/projects.html">See projects</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

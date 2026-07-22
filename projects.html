@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Roman Krzmarzick</title>
+<meta name="description" content="Engineering and software projects by Roman Krzmarzick — CAD models, hardware builds, games, and tools. Searchable and filterable by technology.">
+<link rel="canonical" href="https://romankrzmarzick.github.io/projects.html">
+<meta name="theme-color" content="#07080d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Roman Krzmarzick">
+<meta property="og:description" content="Engineering and software projects: CAD models, hardware builds, games, and tools.">
+<meta property="og:url" content="https://romankrzmarzick.github.io/projects.html">
+<meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("rk-theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<script src="assets/js/content.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="projects">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+
+  <section class="section" aria-labelledby="projects-heading">
+    <div class="container">
+
+      <div data-reveal style="margin-bottom:clamp(2rem,4vw,3rem)">
+        <span class="eyebrow">Portfolio</span>
+        <h1 id="projects-heading">Projects</h1>
+        <p class="lead" style="max-width:52ch;margin-top:1rem">
+          Everything here I built myself, start to finish. Search by name or technology,
+          or filter by the kind of work.
+        </p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filters" data-reveal style="--delay:80ms">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 1-4.62 13.4l-3.2 3.2-1.42-1.42 3.2-3.2A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+          <label class="sr-only" for="project-search">Search projects</label>
+          <input type="search" id="project-search" placeholder="Search projects, tools, tech…" autocomplete="off">
+        </div>
+        <div class="chip-row" id="project-filters" role="group" aria-label="Filter projects by category"></div>
+      </div>
+
+      <p class="muted" id="project-count" aria-live="polite" style="font-size:.85rem;margin-bottom:1.5rem"></p>
+
+      <div class="grid" id="project-grid" data-stagger="70"></div>
+
+      <div class="empty-state" id="project-empty" hidden>
+        <p><strong>No projects match that.</strong></p>
+        <p style="margin-top:.5rem">Try a different search term or clear the filters.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <h2>More on the way</h2>
+        <p>
+          I'm always building something. Follow along on GitHub, or read the notes I write
+          up as I go.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="blog.html">Read the blog</a>
+          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

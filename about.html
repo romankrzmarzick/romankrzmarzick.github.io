@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Roman Krzmarzick</title>
+<meta name="description" content="About Roman Krzmarzick: mechanical engineering student at St. Ambrose University, self-taught programmer, soccer player, and lifter based in Davenport, Iowa.">
+<link rel="canonical" href="https://romankrzmarzick.github.io/about.html">
+<meta name="theme-color" content="#07080d">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="About — Roman Krzmarzick">
+<meta property="og:description" content="Mechanical engineering student at St. Ambrose University, self-taught programmer, soccer player, and lifter.">
+<meta property="og:url" content="https://romankrzmarzick.github.io/about.html">
+<meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("rk-theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<script src="assets/js/content.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="about">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+
+  <section class="section" aria-labelledby="about-heading">
+    <div class="container">
+      <div data-reveal>
+        <span class="eyebrow">About</span>
+        <h1 id="about-heading">Engineering, code,<br><span class="grad-text">and a lot of reps.</span></h1>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:clamp(2.5rem,5vw,4rem);align-items:start">
+        <div class="prose" id="bio" data-reveal style="--delay:100ms"></div>
+
+        <aside class="card" data-reveal style="--delay:180ms">
+          <h3>At a glance</h3>
+          <dl class="skill-groups" style="margin-top:1rem">
+            <div class="skill-group"><dt>School</dt><dd>St. Ambrose University</dd></div>
+            <div class="skill-group"><dt>Major</dt><dd>B.S. Mechanical Engineering</dd></div>
+            <div class="skill-group"><dt>Class of</dt><dd>2030</dd></div>
+            <div class="skill-group"><dt>Location</dt><dd>Davenport, Iowa</dd></div>
+            <div class="skill-group"><dt>Also into</dt><dd>Soccer, lifting, building things</dd></div>
+          </dl>
+          <div class="btn-row" style="margin-top:1.5rem">
+            <a class="btn btn-ghost btn-sm" href="resume.html">View résumé</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goals -->
+  <section class="section section--tight" aria-labelledby="goals-heading">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Where I'm headed</span>
+          <h2 id="goals-heading">Career goals</h2>
+          <p>Short version: get good at the fundamentals, then go build things that move.</p>
+        </div>
+      </div>
+      <div class="grid" id="goals" data-stagger="90"></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section section--tight" aria-labelledby="timeline-heading">
+    <div class="container container--narrow" style="margin-inline:0;max-width:none">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">The path so far</span>
+          <h2 id="timeline-heading">Timeline</h2>
+        </div>
+      </div>
+      <ol class="timeline" id="about-timeline" data-reveal></ol>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section section--tight" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Toolbox</span>
+          <h2 id="skills-heading">Skills</h2>
+          <p>Some of these are solid, some are actively in progress. I'd rather list what I'm working on than pretend I've mastered it.</p>
+        </div>
+      </div>
+      <div class="grid" id="skills" data-stagger="80"></div>
+    </div>
+  </section>
+
+  <!-- Interests -->
+  <section class="section section--tight" aria-labelledby="interests-heading">
+    <div class="container">
+      <div class="card" data-reveal>
+        <span class="eyebrow">Outside of school</span>
+        <h2 id="interests-heading" style="font-size:clamp(1.4rem,2.6vw,1.9rem)">Interests</h2>
+        <ul class="tags" id="interests" style="margin-top:1.25rem"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <h2>Want the short version?</h2>
+        <p>My résumé has the same story in one page.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="resume.html">View résumé</a>
+          <a class="btn btn-ghost" href="projects.html">See projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

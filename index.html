@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roman Krzmarzick — Mechanical Engineering Student</title>
+<meta name="description" content="Roman Krzmarzick — mechanical engineering student at St. Ambrose University in Davenport, Iowa. Projects in CAD, code, and hardware.">
+<link rel="canonical" href="https://romankrzmarzick.github.io/">
+<meta name="theme-color" content="#07080d">
+<meta name="author" content="Roman Krzmarzick">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roman Krzmarzick">
+<meta property="og:title" content="Roman Krzmarzick — Mechanical Engineering Student">
+<meta property="og:description" content="Mechanical engineering at St. Ambrose University — and code on the side. Projects in CAD, hardware, and software.">
+<meta property="og:url" content="https://romankrzmarzick.github.io/">
+<meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  /* Set the theme before first paint so there's no flash of the wrong mode. */
+  (function () {
+    try {
+      var t = localStorage.getItem("rk-theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<script src="assets/js/content.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="home">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="pill" id="availability" data-reveal></span>
+
+        <h1 data-reveal style="--delay:80ms">
+          Mechanical engineer<br>
+          <span class="grad-text">who writes code.</span>
+        </h1>
+
+        <p class="lead" data-reveal style="--delay:160ms">
+          I'm Roman — an incoming freshman at <strong>St. Ambrose University</strong> in
+          Davenport, Iowa, studying mechanical engineering. I like problems that live where
+          hardware meets software: mechanisms, embedded systems, and the code that makes them
+          do something useful. Off the clock, you'll find me on a soccer pitch or under a barbell.
+        </p>
+
+        <div class="btn-row" data-reveal style="--delay:240ms">
+          <a class="btn btn-primary" href="projects.html">
+            View my work
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.17 5.17 11.76 6.59 16.17 11H4v2h12.17l-4.41 4.41 1.41 1.42L20 12l-6.83-6.83Z"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+          <a class="btn btn-ghost" href="resume.html">Résumé</a>
+        </div>
+      </div>
+
+      <dl class="stats" id="quick-facts" data-reveal style="--delay:320ms"></dl>
+    </div>
+  </section>
+
+  <!-- Featured projects -->
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Selected work</span>
+          <h2 id="featured-heading">Things I've built</h2>
+          <p>
+            A mix of code, CAD, and hardware. Each one taught me something I couldn't have
+            learned by reading about it.
+          </p>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="projects.html">All projects</a>
+      </div>
+
+      <div class="grid" id="featured-projects" data-stagger="90"></div>
+    </div>
+  </section>
+
+  <!-- What I'm about -->
+  <section class="section section--tight" aria-labelledby="focus-heading">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">How I work</span>
+          <h2 id="focus-heading">Three things I care about</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-2" data-stagger="90">
+        <article class="card">
+          <h3>Build it, then break it</h3>
+          <p>
+            A design isn't finished when it's modeled — it's finished when it's been loaded,
+            printed, run, or played, and I know exactly where it fails. Most of what I've
+            learned came from the second attempt.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Mechanical and software aren't separate</h3>
+          <p>
+            The interesting problems sit on the boundary: a linkage that needs a control loop,
+            a test rig that needs a data pipeline. I'd rather be able to work both sides than
+            hand off at the seam.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Consistency beats intensity</h3>
+          <p>
+            Years of soccer and lifting taught me the same lesson engineering keeps repeating:
+            steady, unglamorous work compounds. Progress gets measured in seasons, not days.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <span class="eyebrow" style="justify-content:center">Let's talk</span>
+        <h2>Working on something interesting?</h2>
+        <p>
+          I'm looking for internships, design teams, and projects where I can get my hands
+          on real hardware. If that sounds like you, I'd like to hear about it.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="contact.html">Contact me</a>
+          <a class="btn btn-ghost" href="about.html">More about me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>
