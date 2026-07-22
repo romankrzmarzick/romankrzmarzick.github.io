@@ -135,56 +135,70 @@ const SITE = {
       status: "In progress",
       blurb:
         "A Frogger-style arcade game built in Godot 4 with GDScript. Lane-based hazard movement, collision layers, scene composition, and a scoring system — my sandbox for learning real game architecture instead of tutorial copies.",
-      tags: ["Game Dev", "Code"],
+      tags: ["Game Dev", "Godot"],
       tech: ["Godot 4", "GDScript", "Tilemaps"],
       featured: true,
+      // No repo link yet — push it to GitHub and add:
+      // repo: "https://github.com/romankrzmarzick/Frogger",
+      links: {},
+    },
+    {
+      title: "Celeste Clone",
+      year: "2026",
+      status: "In progress",
+      blurb:
+        "A 2D platformer in Python and pygame where the whole point was making the movement feel right — dash, wall jump, wall climb, and coyote time. Levels are built in Tiled and rendered at 320×180, scaled up.",
+      tags: ["Game Dev", "Python"],
+      tech: ["Python", "pygame", "pytmx", "Tiled"],
+      featured: true,
       links: {
-        // repo: "https://github.com/romankrzmarzick/frogger",
+        repo: "https://github.com/romankrzmarzick/CelesteClone",
       },
     },
     {
-      // SAMPLE
-      title: "Parametric Phone Stand",
+      title: "Tic-tac-toe",
       year: "2026",
       status: "Complete",
       blurb:
-        "SAMPLE PROJECT — A fully parametric desk stand modeled in Fusion 360, driven by a small table of variables so the angle and device thickness can be changed in one place. Printed and iterated three times to fix a hinge that kept flexing.",
-      tags: ["CAD", "Hardware"],
-      tech: ["Fusion 360", "FDM printing", "PLA"],
+        "Tic-tac-toe against the computer, with two opponents: one random, one that wins when it can, blocks when it has to, and takes the center. Built on a state pattern, and the board scales past 3×3.",
+      tags: ["Game Dev", "Python", "AI"],
+      tech: ["Python", "pygame"],
       featured: true,
-      links: {},
+      links: {
+        repo: "https://github.com/romankrzmarzick/Tic-tac-toe",
+      },
     },
     {
-      // SAMPLE
-      title: "Lift Log",
+      title: "Space Shooter",
       year: "2026",
-      status: "Building",
-      blurb:
-        "SAMPLE PROJECT — A small Python tool for tracking training: logs sets and reps, computes estimated one-rep maxes, and charts progression per lift so I can see whether a block actually worked.",
-      tags: ["Code", "Data"],
-      tech: ["Python", "pandas", "matplotlib"],
-      featured: true,
-      links: {},
-    },
-    {
-      // SAMPLE
-      title: "Arduino Reaction Timer",
-      year: "2025",
       status: "Complete",
       blurb:
-        "SAMPLE PROJECT — A breadboard reaction-time game using an Arduino, LEDs, and a push button, with results printed over serial. A first real lesson in debounce, timing, and why pull-up resistors exist.",
-      tags: ["Hardware", "Code"],
-      tech: ["Arduino", "C++", "Breadboarding"],
-      links: {},
+        "A top-down arcade shooter — fly, shoot lasers on a cooldown, dodge asteroids, and survive as long as you can. Sound, music, and frame-by-frame explosions, with every asset preloaded so the loop never touches the disk.",
+      tags: ["Game Dev", "Python"],
+      tech: ["Python", "pygame"],
+      links: {
+        repo: "https://github.com/romankrzmarzick/Space-Shooter",
+      },
     },
     {
-      // SAMPLE
+      title: "Pong",
+      year: "2026",
+      status: "Complete",
+      blurb:
+        "The classic, in Python and pygame, against a computer paddle that tracks the ball. The score is written to disk on quit, so it carries over between sessions.",
+      tags: ["Game Dev", "Python"],
+      tech: ["Python", "pygame", "JSON"],
+      links: {
+        repo: "https://github.com/romankrzmarzick/Pong",
+      },
+    },
+    {
       title: "Personal Website",
       year: "2026",
       status: "Live",
       blurb:
         "This site. Hand-built static pages with no framework and no build step, driven by a single content file so updating it never turns into a chore. Deployed on GitHub Pages.",
-      tags: ["Code", "Web"],
+      tags: ["Web"],
       tech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
       links: {
         repo: "https://github.com/romankrzmarzick/romankrzmarzick.github.io",
