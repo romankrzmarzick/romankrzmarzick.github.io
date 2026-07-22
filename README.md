@@ -53,14 +53,12 @@ Add an object to `SITE.projects`:
 
 ## To-do list for Roman
 
-Things set up with placeholders — search `content.js` for the word **SAMPLE**:
+Everything on the site is now real. Remaining nice-to-haves:
 
-- [ ] **Replace the sample projects.** Only *Frogger* and *Personal Website* are real. Delete
-      the phone stand, Lift Log, and Arduino entries or swap in your actual work.
-- [ ] **Fill in Experience.** The soccer, summer job, and captain entries are invented —
-      replace with real ones or delete them.
-- [ ] **Fix your high school entry** in `SITE.about.timeline`.
-- [ ] **Trim the skills list** to what you'd actually be comfortable being asked about.
+- [ ] **Name your soccer team.** The Experience entry says "Soccer / Through 2025" with no
+      team. Add `org: "Your team name"` and tighten the dates in `SITE.experience`.
+- [ ] **Push Frogger to GitHub** and uncomment the `repo:` line on that project so the card
+      gets a Code link like the others.
 - [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
       shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
       *Save as PDF*) — which also works fine as a permanent solution.
