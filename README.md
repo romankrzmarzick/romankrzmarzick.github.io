@@ -38,8 +38,8 @@ Add an object to `SITE.projects`:
   year: "2027",
   status: "Complete",           // Complete · Building · In progress · Live
   blurb: "One or two sentences on what it is and what you learned.",
-  tags: ["CAD", "Hardware"],    // becomes a filter chip automatically
-  tech: ["Fusion 360", "PLA"],
+  tags: ["Game Dev", "Python"], // becomes a filter chip automatically
+  tech: ["Python", "pygame"],
   featured: true,               // shows on the homepage (max 3)
   image: "assets/img/my-project.jpg",   // optional — omit for a gradient card
   links: {
@@ -53,12 +53,10 @@ Add an object to `SITE.projects`:
 
 ## To-do list for Roman
 
-Everything on the site is now real. Remaining nice-to-haves:
+Everything on the site is real. Remaining nice-to-haves:
 
-- [ ] **Name your soccer team.** The Experience entry says "Soccer / Through 2025" with no
-      team. Add `org: "Your team name"` and tighten the dates in `SITE.experience`.
-- [ ] **Push Frogger to GitHub** and uncomment the `repo:` line on that project so the card
-      gets a Code link like the others.
+- [ ] **Add exact years to the BSA soccer entry** in `SITE.experience` — it currently just
+      says "Youth".
 - [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
       shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
       *Save as PDF*) — which also works fine as a permanent solution.
