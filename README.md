@@ -19,7 +19,7 @@ is in there — add a project and it appears on Projects *and* the homepage.
 
 | What you want to change | Where |
 | --- | --- |
-| Name, tagline, email, Handshake/GitHub links | `SITE` — top of `content.js` |
+| Name, tagline, email, LinkedIn/Handshake/GitHub links | `SITE` — top of `content.js` |
 | Homepage intro + quick facts | `SITE.home` |
 | Bio, goals, timeline, interests | `SITE.about` |
 | Skills lists | `SITE.skills` |
@@ -68,7 +68,7 @@ Things set up with placeholders — search `content.js` for the word **SAMPLE**:
       (LinkedIn, iMessage) won't render SVG link previews.
 
 There is no contact page and no blog by design — your email is shown in the footer of every
-page and on the homepage, and your Handshake and GitHub links sit in the footer.
+page and on the homepage, and your LinkedIn, Handshake, and GitHub links sit in the footer.
 
 ---
 

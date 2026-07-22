@@ -28,6 +28,7 @@ const SITE = {
      Delete any line you do not want shown. `icon` must match an icon name
      defined in site.js (handshake, github, mail, linkedin, instagram, x).    */
   socials: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/roman-krzmarzick-969500424", icon: "linkedin" },
     { label: "Handshake", href: "https://sau.joinhandshake.com/profiles/8kvv73", icon: "handshake" },
     { label: "GitHub", href: "https://github.com/romankrzmarzick", icon: "github" },
     { label: "Email", href: "mailto:romankrzmarzick@gmail.com", icon: "mail" },
