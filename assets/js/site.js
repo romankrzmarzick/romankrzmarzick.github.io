@@ -33,16 +33,6 @@
       );
   }
 
-  const MONTHS = ["January","February","March","April","May","June","July",
-    "August","September","October","November","December"];
-
-  // "2026-07-10" -> "July 10, 2026" (parsed manually to dodge timezone drift)
-  function prettyDate(iso) {
-    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
-    if (!m) return iso || "";
-    return MONTHS[+m[2] - 1] + " " + +m[3] + ", " + m[1];
-  }
-
   function initialsOf(title) {
     return String(title || "")
       .replace(/[^A-Za-z0-9 ]/g, " ")
@@ -61,6 +51,10 @@
       '<path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.11 2.51.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>',
     linkedin:
       '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.65h.05A4.17 4.17 0 0 1 16.6 8.7c4 0 4.74 2.5 4.74 5.76V21h-4v-5.7c0-1.36-.03-3.11-1.94-3.11-1.94 0-2.24 1.48-2.24 3.01V21H9V9Z"/>',
+    // Career profile (Handshake) — a briefcase reads clearly at icon size.
+    handshake:
+      '<path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7h-2V5.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V7H8Z"/>' +
+      '<path d="M3 8h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Zm8 4v2h2v-2h-2Z"/>',
     mail:
       '<path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.2V18h16V7.2l-8 5.3-8-5.3ZM19.4 6H4.6L12 10.9 19.4 6Z"/>',
     instagram:
@@ -131,8 +125,6 @@
     { href: "projects.html", label: "Projects", page: "projects" },
     { href: "experience.html", label: "Experience", page: "experience" },
     { href: "resume.html", label: "Resume", page: "resume" },
-    { href: "blog.html", label: "Blog", page: "blog" },
-    { href: "contact.html", label: "Contact", page: "contact" },
   ];
 
   function socialLinks() {
@@ -217,6 +209,9 @@
     host.innerHTML =
       '<div class="container footer-inner">' +
         "<div>" +
+          '<a class="footer-email" href="mailto:' + esc(S.email) + '">' +
+            icon("mail") + esc(S.email) +
+          "</a>" +
           "<p>&copy; " + new Date().getFullYear() + " " + esc(S.name || "") +
             ". Built from scratch — no template.</p>" +
         "</div>" +
@@ -664,208 +659,6 @@
       });
   }
 
-  /* ------------------------------------------------------------- page: blog */
-
-  function pageBlog() {
-    const list = $("#post-list");
-    if (!list) return;
-
-    const posts = (S.posts || []).slice();
-
-    list.innerHTML = posts
-      .map(
-        (p) =>
-          "<li>" +
-            '<a class="post-item" href="post.html?p=' + encodeURIComponent(p.slug) + '">' +
-              '<div class="post-meta">' +
-                "<time datetime=" + '"' + esc(p.date) + '">' + esc(prettyDate(p.date)) + "</time>" +
-                (p.readingTime ? '<span class="sep">·</span><span>' + esc(p.readingTime) + "</span>" : "") +
-                ((p.tags || []).length
-                  ? '<span class="sep">·</span><span>' + esc(p.tags.join(", ")) + "</span>"
-                  : "") +
-              "</div>" +
-              "<h3>" + esc(p.title) + "</h3>" +
-              "<p>" + esc(p.excerpt) + "</p>" +
-              '<span class="read-more">Read post ' + icon("arrow") + "</span>" +
-            "</a>" +
-          "</li>"
-      )
-      .join("");
-
-    if (!posts.length) {
-      list.innerHTML =
-        '<li class="empty-state">No posts yet — first one is in progress.</li>';
-    }
-  }
-
-  /* ------------------------------------------------------------- page: post */
-
-  function renderBlocks(body) {
-    return (body || [])
-      .map((b) => {
-        if (b.h) return "<h2>" + inline(b.h) + "</h2>";
-        if (b.p) return "<p>" + inline(b.p) + "</p>";
-        if (b.quote) return "<blockquote>" + inline(b.quote) + "</blockquote>";
-        if (b.code) return "<pre><code>" + esc(b.code) + "</code></pre>";
-        if (b.list)
-          return "<ul>" + b.list.map((i) => "<li>" + inline(i) + "</li>").join("") + "</ul>";
-        return "";
-      })
-      .join("");
-  }
-
-  function pagePost() {
-    const host = $("#post-body");
-    if (!host) return;
-
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("p");
-    const posts = S.posts || [];
-    const post = posts.filter((p) => p.slug === slug)[0];
-
-    if (!post) {
-      host.innerHTML =
-        '<div class="empty-state"><p>That post doesn\'t exist (or moved).</p>' +
-        '<p style="margin-top:1rem"><a class="btn btn-ghost btn-sm" href="blog.html">Back to all posts</a></p></div>';
-      document.title = "Post not found · " + (S.name || "");
-      return;
-    }
-
-    document.title = post.title + " · " + (S.name || "");
-    const desc = $('meta[name="description"]');
-    if (desc) desc.setAttribute("content", post.excerpt || "");
-
-    const title = $("#post-title");
-    if (title) title.textContent = post.title;
-
-    const meta = $("#post-meta");
-    if (meta) {
-      meta.innerHTML =
-        "<time datetime=" + '"' + esc(post.date) + '">' + esc(prettyDate(post.date)) + "</time>" +
-        (post.readingTime ? '<span class="sep">·</span><span>' + esc(post.readingTime) + "</span>" : "") +
-        ((post.tags || []).length
-          ? '<span class="sep">·</span><span>' + esc(post.tags.join(", ")) + "</span>"
-          : "");
-    }
-
-    host.innerHTML = renderBlocks(post.body);
-
-    // Prev / next within the list order.
-    const i = posts.indexOf(post);
-    const nav = $("#post-nav");
-    if (nav) {
-      const prev = posts[i + 1];
-      const next = posts[i - 1];
-      nav.innerHTML =
-        (prev
-          ? '<a class="btn btn-ghost btn-sm" href="post.html?p=' +
-            encodeURIComponent(prev.slug) + '">&larr; ' + esc(prev.title) + "</a>"
-          : "") +
-        (next
-          ? '<a class="btn btn-ghost btn-sm" href="post.html?p=' +
-            encodeURIComponent(next.slug) + '">' + esc(next.title) + " &rarr;</a>"
-          : "");
-    }
-  }
-
-  /* ---------------------------------------------------------- page: contact */
-
-  function pageContact() {
-    const blurb = $("#contact-blurb");
-    if (blurb && S.contact && S.contact.blurb) blurb.textContent = S.contact.blurb;
-
-    const list = $("#contact-list");
-    if (list) {
-      const rows = [
-        { icon: "mail", label: "Email", value: S.email, href: "mailto:" + S.email },
-        { icon: "map", label: "Based in", value: S.location, href: null },
-      ].concat(
-        (S.socials || [])
-          .filter((s) => s.icon !== "mail")
-          .map((s) => ({
-            icon: s.icon,
-            label: s.label,
-            value: s.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""),
-            href: s.href,
-          }))
-      );
-
-      list.innerHTML = rows
-        .map((r) => {
-          const inner =
-            icon(r.icon) +
-            '<span><span class="label">' + esc(r.label) + "</span>" +
-            '<span class="value">' + esc(r.value) + "</span></span>";
-          return "<li>" + (r.href
-            ? '<a href="' + esc(r.href) + '"' +
-              (r.href.indexOf("http") === 0 ? ' target="_blank" rel="noopener noreferrer"' : "") +
-              ">" + inner + "</a>"
-            : '<a as="div" aria-disabled="true">' + inner + "</a>") + "</li>";
-        })
-        .join("");
-    }
-
-    const form = $("#contact-form");
-    if (!form) return;
-
-    const status = $("#form-status");
-    const endpoint = (S.contact && S.contact.formEndpoint) || "";
-
-    function say(msg, state) {
-      if (!status) return;
-      status.hidden = false;
-      status.textContent = msg;
-      status.setAttribute("data-state", state);
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-
-      const data = new FormData(form);
-      const name = data.get("name") || "";
-      const email = data.get("email") || "";
-      const subject = data.get("subject") || "Message from your website";
-      const message = data.get("message") || "";
-
-      // No Formspree endpoint configured — fall back to the user's mail client.
-      if (!endpoint) {
-        const body =
-          "From: " + name + " (" + email + ")\n\n" + message;
-        window.location.href =
-          "mailto:" + S.email +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
-        say("Opening your email app with the message ready to send.", "ok");
-        return;
-      }
-
-      const btn = $("#form-submit", form);
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-      say("Sending…", "");
-
-      fetch(endpoint, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      })
-        .then((res) => {
-          if (!res.ok) throw new Error("bad response");
-          form.reset();
-          say("Thanks — your message is on its way. I'll get back to you soon.", "ok");
-        })
-        .catch(() => {
-          say(
-            "Something went wrong sending that. Email me directly at " + S.email + ".",
-            "error"
-          );
-        })
-        .finally(() => {
-          if (btn) { btn.disabled = false; btn.textContent = "Send message"; }
-        });
-    });
-  }
-
   /* -------------------------------------------------------------- SEO bits */
 
   function injectStructuredData() {
@@ -897,9 +690,6 @@
     projects: pageProjects,
     experience: pageExperience,
     resume: pageResume,
-    blog: pageBlog,
-    post: pagePost,
-    contact: pageContact,
   };
 
   function boot() {

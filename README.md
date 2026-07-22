@@ -15,20 +15,17 @@ GitHub Pages serves it within a minute.
 **Almost everything lives in one file: [`assets/js/content.js`](assets/js/content.js).**
 
 Open it, edit the text, save, commit, push. The pages rebuild themselves around whatever
-is in there — add a project and it appears on Projects *and* the homepage; add a blog post
-and it appears on Blog with its own page.
+is in there — add a project and it appears on Projects *and* the homepage.
 
 | What you want to change | Where |
 | --- | --- |
-| Name, tagline, email, socials | `SITE` — top of `content.js` |
+| Name, tagline, email, Handshake/GitHub links | `SITE` — top of `content.js` |
 | Homepage intro + quick facts | `SITE.home` |
 | Bio, goals, timeline, interests | `SITE.about` |
 | Skills lists | `SITE.skills` |
 | Projects | `SITE.projects` |
 | Work / leadership / athletics | `SITE.experience` |
 | Résumé education + PDF path | `SITE.resume` |
-| Blog posts | `SITE.posts` |
-| Contact form endpoint | `SITE.contact` |
 | Colors, spacing, type | `assets/css/styles.css` (design tokens at the top) |
 
 ### Adding a project
@@ -52,30 +49,6 @@ Add an object to `SITE.projects`:
 }
 ```
 
-### Adding a blog post
-
-Add an object to the **top** of `SITE.posts` (newest first):
-
-```js
-{
-  slug: "url-friendly-name",
-  title: "Post title",
-  date: "2027-01-15",
-  readingTime: "4 min",
-  tags: ["Projects"],
-  excerpt: "The teaser shown on the blog index.",
-  body: [
-    { p: "A paragraph. Supports **bold**, *italic*, `code`, and [links](https://x.com)." },
-    { h: "A subheading" },
-    { list: ["Bullet one", "Bullet two"] },
-    { quote: "A pull quote." },
-    { code: "print('a code block')" },
-  ],
-}
-```
-
-The post is served at `post.html?p=url-friendly-name`.
-
 ---
 
 ## To-do list for Roman
@@ -87,16 +60,15 @@ Things set up with placeholders — search `content.js` for the word **SAMPLE**:
 - [ ] **Fill in Experience.** The soccer, summer job, and captain entries are invented —
       replace with real ones or delete them.
 - [ ] **Fix your high school entry** in `SITE.about.timeline`.
-- [ ] **Add your LinkedIn URL** in `SITE.socials` (currently a placeholder link).
 - [ ] **Trim the skills list** to what you'd actually be comfortable being asked about.
 - [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
       shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
       *Save as PDF*) — which also works fine as a permanent solution.
-- [ ] **Hook up the contact form.** Sign up free at [formspree.io](https://formspree.io),
-      create a form, paste the endpoint into `SITE.contact.formEndpoint`. Until then the form
-      falls back to opening the visitor's email app with the message pre-filled.
 - [ ] *(Optional)* Replace `assets/img/og.svg` with a 1200×630 **PNG** — some sites
       (LinkedIn, iMessage) won't render SVG link previews.
+
+There is no contact page and no blog by design — your email is shown in the footer of every
+page and on the homepage, and your Handshake and GitHub links sit in the footer.
 
 ---
 
@@ -108,9 +80,6 @@ about.html          Bio, goals, timeline, skills, interests
 projects.html       Searchable + filterable portfolio
 experience.html     Filterable timeline
 resume.html         Embedded PDF, or printable HTML résumé
-blog.html           Post index
-post.html           Single post (?p=slug)
-contact.html        Form + direct links
 404.html            Not-found page
 sitemap.xml         SEO
 robots.txt          SEO

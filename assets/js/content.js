@@ -26,11 +26,10 @@ const SITE = {
 
   /* ---------- Social links ----------
      Delete any line you do not want shown. `icon` must match an icon name
-     defined in site.js (github, linkedin, mail, instagram, x, youtube).      */
+     defined in site.js (handshake, github, mail, linkedin, instagram, x).    */
   socials: [
+    { label: "Handshake", href: "https://sau.joinhandshake.com/profiles/8kvv73", icon: "handshake" },
     { label: "GitHub", href: "https://github.com/romankrzmarzick", icon: "github" },
-    // SAMPLE — swap in your real LinkedIn URL or delete this line.
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/", icon: "linkedin" },
     { label: "Email", href: "mailto:romankrzmarzick@gmail.com", icon: "mail" },
   ],
 
@@ -252,94 +251,6 @@ const SITE = {
         ],
       },
     ],
-  },
-
-  /* ---------- Blog ----------
-     `body` is an array of blocks. Supported types:
-       { p: "text" }        paragraph  (basic **bold**, *italic*, `code`, [text](url))
-       { h: "text" }        subheading
-       { list: ["a","b"] }  bullet list
-       { quote: "text" }    pull quote
-       { code: "..." }      code block
-     Newest first. `slug` becomes the URL: post.html?p=slug                   */
-  posts: [
-    {
-      slug: "why-mechanical-engineering",
-      title: "Why I picked mechanical engineering (and kept coding anyway)",
-      date: "2026-07-10",
-      readingTime: "4 min",
-      tags: ["Personal"],
-      excerpt:
-        "Choosing a major felt like being asked to pick one half of how I think. Here's why I stopped treating mechanical and software as a either-or choice.",
-      body: [
-        { p: "SAMPLE POST — replace this with your own writing. I'm leaving it here so the blog looks finished and you can see how the formatting works." },
-        { p: "For a while I thought I had to choose. Mechanical engineering was the thing I could point at — parts, loads, tolerances, something you can hold. Programming was the thing I did late at night because it was fun. They felt like separate lives." },
-        { h: "The moment it clicked" },
-        { p: "Building a game in Godot was what changed my mind. Nothing about it is mechanical, and yet the entire thing is a physics problem: collision volumes, velocity, state that has to stay consistent frame to frame. I was debugging the same class of problem I'd hit in a statics diagram, just with different notation." },
-        { p: "Modern mechanical work is full of this. A robot arm is a linkage and a control loop. A test rig is a fixture and a data pipeline. The people who can move between both sides don't have to hand off at the boundary." },
-        { h: "What I'm doing about it" },
-        { list: [
-          "Treating CAD and code as one skill set, not two hobbies.",
-          "Finishing projects instead of collecting half-built ones.",
-          "Writing down what broke — the fixes are where the learning actually is.",
-        ]},
-        { quote: "Consistent, boring work compounds. That's true of a training block and it's true of a semester." },
-        { p: "So: mechanical engineering as the major, code as the multiplier. I'll report back on how that goes." },
-      ],
-    },
-    {
-      slug: "first-godot-project",
-      title: "What building Frogger taught me about structure",
-      date: "2026-06-18",
-      readingTime: "5 min",
-      tags: ["Projects", "Game Dev"],
-      excerpt:
-        "My first real Godot project started as one giant script. Here's how it fell apart, and what I rebuilt it into.",
-      body: [
-        { p: "SAMPLE POST — replace with your own notes from the project." },
-        { p: "The first version of my Frogger clone was one scene and one very long script. It worked, right up until I wanted to add a second hazard type. Then every change broke something unrelated." },
-        { h: "The rewrite" },
-        { p: "Splitting hazards into their own scenes with a shared base was the fix. Each lane spawns its own obstacles and doesn't know or care what the others are doing. Adding a new type became a five-minute job instead of an afternoon of untangling." },
-        { code: "func _physics_process(delta):\n    position.x += speed * delta\n    if position.x > wrap_limit:\n        position.x = -wrap_limit" },
-        { h: "What carried over" },
-        { list: [
-          "Small pieces with clear responsibilities beat one clever piece.",
-          "Collision layers are worth learning properly before you need them.",
-          "If a change is scary to make, that's a design problem, not a discipline problem.",
-        ]},
-        { p: "It's still in progress. That's fine — it's the project I learn on." },
-      ],
-    },
-    {
-      slug: "freshman-year-goals",
-      title: "Goals going into freshman year",
-      date: "2026-05-30",
-      readingTime: "3 min",
-      tags: ["Personal", "Notes"],
-      excerpt:
-        "Writing down what I actually want out of year one at St. Ambrose, so I can check it honestly in May.",
-      body: [
-        { p: "SAMPLE POST — replace with your own." },
-        { p: "Putting goals in public makes them harder to quietly abandon. Here's the list for my first year at St. Ambrose." },
-        { list: [
-          "Build real relationships with professors — office hours from week one, not week ten.",
-          "Find a hands-on team or lab to join in the first semester.",
-          "Keep lifting and stay on the pitch. The routine is what keeps the rest working.",
-          "Ship two personal projects, finished and documented.",
-        ]},
-        { p: "I'll revisit this at the end of the year and grade myself honestly." },
-      ],
-    },
-  ],
-
-  /* ---------- Contact ----------
-     The form posts to Formspree. Create a free form at formspree.io, then
-     paste your endpoint below. Until then the form falls back to opening a
-     pre-filled email in your mail app — it still works either way.           */
-  contact: {
-    formEndpoint: "", // e.g. "https://formspree.io/f/xxxxxxxx"
-    blurb:
-      "Whether it's an internship, a project you want a hand with, or you just want to talk shop about engineering — my inbox is open. I answer everything.",
   },
 };
 

@@ -1182,6 +1182,42 @@ main { flex: 1 0 auto; }
 
 .footer-inner p { font-size: 0.85rem; color: var(--text-faint); }
 
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-email svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
+
+/* Large mailto shown in place of a contact page */
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: clamp(1.05rem, 3vw, 1.65rem);
+  font-weight: 620;
+  letter-spacing: -0.03em;
+  word-break: break-word;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 0.2s var(--ease);
+}
+
+.email-link:hover { opacity: 0.75; color: transparent; }
+
+.email-link svg {
+  width: clamp(20px, 3vw, 26px);
+  height: clamp(20px, 3vw, 26px);
+  color: var(--accent);
+  flex: none;
+}
+
 .social-row { display: flex; gap: 0.5rem; }
 
 .social-row a {
