@@ -178,19 +178,6 @@ const SITE = {
         repo: "https://github.com/romankrzmarzick/Pong",
       },
     },
-    {
-      title: "Personal Website",
-      year: "2026",
-      status: "Live",
-      blurb:
-        "This site. Hand-built static pages with no framework and no build step, driven by a single content file so updating it never turns into a chore. Deployed on GitHub Pages.",
-      tags: ["Web"],
-      tech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      links: {
-        repo: "https://github.com/romankrzmarzick/romankrzmarzick.github.io",
-        live: "https://romankrzmarzick.github.io",
-      },
-    },
   ],
 
   /* ---------- Experience ----------
