@@ -53,11 +53,10 @@ Add an object to `SITE.projects`:
 
 ## To-do list for Roman
 
-Everything on the site is real, with no placeholders. Optional upgrades:
+Everything on the site is real, with no placeholders. The résumé PDF lives at
+`assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time and the Résumé page
+picks it up automatically (regenerate or export a new one, keep the same filename).
 
-- [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
-      shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
-      *Save as PDF*) — which also works fine as a permanent solution.
 - [ ] *(Optional)* Replace `assets/img/og.svg` with a 1200×630 **PNG** — some sites
       (LinkedIn, iMessage) won't render SVG link previews.
 
