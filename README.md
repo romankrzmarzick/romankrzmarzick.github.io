@@ -53,11 +53,8 @@ Add an object to `SITE.projects`:
 
 ## To-do list for Roman
 
-Everything on the site is real. Remaining nice-to-haves:
+Everything on the site is real, with no placeholders. Optional upgrades:
 
-- [ ] **Fill in the Soccer Referee entry** in `SITE.experience` — set the real years and the
-      league name (it currently says "During high school" / "Youth soccer leagues").
-- [ ] **Add exact years to the BSA soccer entry** in `SITE.experience` — it just says "Youth".
 - [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
       shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
       *Save as PDF*) — which also works fine as a permanent solution.

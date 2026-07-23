@@ -11,8 +11,8 @@ const SITE = {
   /* ---------- Identity ---------- */
   name: "Roman Krzmarzick",
   initials: "RK",
-  role: "Incoming Engineering Student",
-  tagline: "Incoming engineering student at St. Ambrose. I build things and figure out how they work.",
+  role: "Mechanical Engineering Major",
+  tagline: "Mechanical engineering major at St. Ambrose University.",
   location: "Bettendorf, Iowa",
   email: "romankrzmarzick@gmail.com",
   // Used for SEO tags + sitemap. Change if you add a custom domain.
@@ -20,9 +20,9 @@ const SITE = {
 
   // Short blurb for search results / link previews (keep near 155 characters).
   metaDescription:
-    "Roman Krzmarzick — incoming engineering student at St. Ambrose University, from Bettendorf, Iowa. Self-taught in Python and SQL, and a lifelong soccer player.",
+    "Roman Krzmarzick — mechanical engineering major at St. Ambrose University, from Bettendorf, Iowa. I code in Python and SQL, and I play soccer.",
 
-  availability: "Starting engineering at St. Ambrose — Fall 2026",
+  availability: "Starting at St. Ambrose University — Fall 2026",
 
   /* ---------- Social links ----------
      Delete any line you do not want shown. `icon` must match an icon name
@@ -36,15 +36,15 @@ const SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    greeting: "Hi, I'm Roman",
-    headlineTop: "Hey, I'm Roman.",
-    headlineBottom: "I build things and figure out how they work.",
+    greeting: "Roman Krzmarzick",
+    headlineTop: "Roman Krzmarzick",
+    headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm an incoming engineering student at St. Ambrose University, from Bettendorf, Iowa. I taught myself to program a couple of years ago — mostly Python, and I've been getting good with SQL — and I build little games and tools for the fun of it. Off the clock: soccer, the gym, and time with family.",
+      "I'm starting at St. Ambrose University this fall, from Bettendorf, Iowa. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that: soccer and the gym.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
-      { label: "Studying", value: "Engineering" },
+      { label: "Major", value: "Mechanical Engineering" },
       { label: "Starting", value: "Fall 2026" },
       { label: "Home", value: "Bettendorf, Iowa" },
     ],
@@ -54,52 +54,31 @@ const SITE = {
   about: {
     // Each string becomes a paragraph.
     bio: [
-      "Hey — I'm Roman. I'm from Bettendorf, Iowa, and this fall I'm starting at St. Ambrose University to study engineering. I've always been the kid who takes things apart to see how they work, so engineering felt like the honest choice.",
-      "After I graduated high school in 2025, I spent a year in the Czech Republic. I played soccer there, learned enough of the language to actually hold a conversation, and met people I never would have otherwise. It was the best thing I could have done before college — I came back knowing myself a lot better and genuinely ready to start.",
-      "When I'm not studying or coding, I'm usually playing soccer, in the gym, or hanging out with my brother. I taught myself to program a couple of years ago and haven't stopped — mostly Python, and lately a lot of SQL. I'm early in all of this and I know it, but I like where it's headed, and there's more coming.",
-    ],
-
-    goals: [
-      {
-        title: "Right now",
-        body:
-          "Start strong at St. Ambrose and keep building on my own — small projects that teach me something I couldn't get from a tutorial.",
-      },
-      {
-        title: "In college",
-        body:
-          "Get deep into engineering, land my first internship, and join a hands-on team where I can actually build something with other people.",
-      },
-      {
-        title: "Down the road",
-        body:
-          "Work on things that mix the physical and the digital — where knowing both the engineering and the code is the whole point.",
-      },
+      "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
+      "After graduating from Pleasant Valley in 2025, I spent a year in the Czech Republic. I played soccer, learned some of the language, and met good people. I came back ready for college.",
+      "I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that I play soccer, lift, and spend time with my brother.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
     timeline: [
       {
         date: "Fall 2026",
-        title: "Starting at St. Ambrose University",
-        org: "Engineering · Davenport, IA",
-        body:
-          "Beginning my freshman year, and looking for teams and projects to get involved with early.",
+        title: "St. Ambrose University",
+        org: "Mechanical Engineering · Davenport, IA",
+        body: "Starting my freshman year.",
         current: true,
       },
       {
         date: "2025 — 2026",
-        title: "A year in the Czech Republic",
-        org: "Gap year abroad",
+        title: "Year in the Czech Republic",
+        org: "Gap year",
         body:
-          "Lived overseas for a year — played soccer, picked up the language, and grew up a lot. It's why I'm starting college in 2026 instead of 2025, and I wouldn't trade it.",
+          "Lived abroad for a year — played soccer, learned some of the language, met good people.",
       },
       {
         date: "2025",
         title: "Graduated high school",
         org: "Pleasant Valley High School",
-        body:
-          "Finished up, kept playing soccer, and spent my free time teaching myself to code.",
       },
     ],
 
@@ -108,7 +87,6 @@ const SITE = {
       "Soccer",
       "Weightlifting",
       "Programming",
-      "Time with my brother",
       "Travel",
     ],
   },
@@ -197,15 +175,13 @@ const SITE = {
      Use: Work · Leadership · Athletics · Research · Volunteer               */
   experience: [
     {
-      // Set the exact years and league name when you get a chance.
       kind: "Work",
-      date: "During high school",
+      date: "High school",
       title: "Soccer Referee",
-      org: "Youth soccer leagues",
+      org: "Youth soccer",
       current: false,
       bullets: [
-        "Refereed youth soccer matches — which mostly meant keeping games moving and staying calm while managing very invested parents on the sideline.",
-        "Good practice at making a quick call under pressure and standing behind it.",
+        "Refereed youth soccer games — kept matches moving, made calls, and handled sideline parents.",
       ],
     },
     {
@@ -215,8 +191,7 @@ const SITE = {
       org: "FC United · Cedar Rapids, IA",
       current: false,
       bullets: [
-        "Played club soccer through my junior and senior years, traveling to Cedar Rapids for training and matches on top of a full school schedule.",
-        "Competing at the club level meant earning minutes rather than being handed them.",
+        "Played club through junior and senior year, traveling to Cedar Rapids for training and matches.",
       ],
     },
     {
@@ -226,18 +201,7 @@ const SITE = {
       org: "Pleasant Valley High School",
       current: false,
       bullets: [
-        "Played for my high school team alongside club, balancing daily practice with coursework.",
-        "Learned to communicate under pressure and hold a role inside a system rather than freelancing.",
-      ],
-    },
-    {
-      kind: "Athletics",
-      date: "Youth",
-      title: "Youth Soccer",
-      org: "Bettendorf Soccer Association (BSA)",
-      current: false,
-      bullets: [
-        "Where it started — years of youth soccer that built the habit of showing up consistently.",
+        "Played for the school team alongside club.",
       ],
     },
   ],
@@ -251,7 +215,7 @@ const SITE = {
     education: [
       {
         school: "St. Ambrose University",
-        degree: "Engineering (B.S.)",
+        degree: "B.S. Mechanical Engineering",
         where: "Davenport, Iowa",
         date: "2026 — 2030 (expected)",
         bullets: [
