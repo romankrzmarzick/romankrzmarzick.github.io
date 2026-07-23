@@ -6,14 +6,14 @@
 <title>Page not found — Roman Krzmarzick</title>
 <meta name="description" content="That page doesn't exist.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#07080d">
+<meta name="theme-color" content="#fcf7ef">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <script>
   (function () {
     try {
       var t = localStorage.getItem("rk-theme");
-      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      if (t !== "dark" && t !== "light") t = "light";
       document.documentElement.setAttribute("data-theme", t);
     } catch (e) {}
   })();

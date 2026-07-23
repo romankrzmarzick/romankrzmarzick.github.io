@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roman Krzmarzick — Mechanical Engineering Student</title>
-<meta name="description" content="Roman Krzmarzick — mechanical engineering student at St. Ambrose University in Davenport, Iowa. Python and pygame projects, plus soccer and lifting.">
+<title>Roman Krzmarzick — Engineering Student</title>
+<meta name="description" content="Roman Krzmarzick — incoming engineering student at St. Ambrose University, from Bettendorf, Iowa. Self-taught in Python and SQL, and a lifelong soccer player.">
 <link rel="canonical" href="https://romankrzmarzick.github.io/">
-<meta name="theme-color" content="#07080d">
+<meta name="theme-color" content="#fcf7ef">
 <meta name="author" content="Roman Krzmarzick">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roman Krzmarzick">
-<meta property="og:title" content="Roman Krzmarzick — Mechanical Engineering Student">
-<meta property="og:description" content="Mechanical engineering at St. Ambrose University — and code on the side. Games and tools built in Python.">
+<meta property="og:title" content="Roman Krzmarzick — Engineering Student">
+<meta property="og:description" content="Incoming engineering student at St. Ambrose, from Bettendorf, Iowa. Self-taught in Python and SQL, plus soccer and lifting.">
 <meta property="og:url" content="https://romankrzmarzick.github.io/">
 <meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   (function () {
     try {
       var t = localStorage.getItem("rk-theme");
-      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      if (t !== "dark" && t !== "light") t = "light";
       document.documentElement.setAttribute("data-theme", t);
     } catch (e) {}
   })();
@@ -44,15 +44,16 @@
         <span class="pill" id="availability" data-reveal></span>
 
         <h1 data-reveal style="--delay:80ms">
-          Mechanical engineer<br>
-          <span class="grad-text">who writes code.</span>
+          Hey, I'm Roman.<br>
+          <span class="grad-text">I build things and figure out how they work.</span>
         </h1>
 
         <p class="lead" data-reveal style="--delay:160ms">
-          I'm Roman — an incoming freshman at <strong>St. Ambrose University</strong> in
-          Davenport, Iowa, studying mechanical engineering. I like problems that live where
-          hardware meets software: mechanisms, embedded systems, and the code that makes them
-          do something useful. Off the clock, you'll find me on a soccer pitch or under a barbell.
+          I'm an incoming engineering student at <strong>St. Ambrose University</strong>,
+          from Bettendorf, Iowa. I taught myself to program a couple of years ago — mostly
+          <strong>Python</strong>, and lately a lot of <strong>SQL</strong> — and I build
+          little games and tools for the fun of it. Off the clock: soccer, the gym, and time
+          with family.
         </p>
 
         <div class="btn-row" data-reveal style="--delay:240ms">
@@ -92,11 +93,11 @@
   <section class="section section--tight">
     <div class="container">
       <div class="cta" data-reveal>
-        <span class="eyebrow" style="justify-content:center">Get in touch</span>
-        <h2>Working on something interesting?</h2>
+        <span class="eyebrow" style="justify-content:center">Say hello</span>
+        <h2>Let's talk.</h2>
         <p>
-          I'm looking for internships, design teams, and projects where I can get my hands
-          on real hardware. If that sounds like you, I'd like to hear about it.
+          I'm always up for meeting people, talking soccer or code, or hearing about
+          something you're building. Drop me a line — I read everything.
         </p>
         <p style="margin-top:1.75rem">
           <a class="email-link" href="mailto:romankrzmarzick@gmail.com">

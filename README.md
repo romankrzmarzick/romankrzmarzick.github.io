@@ -55,13 +55,18 @@ Add an object to `SITE.projects`:
 
 Everything on the site is real. Remaining nice-to-haves:
 
-- [ ] **Add exact years to the BSA soccer entry** in `SITE.experience` — it currently just
-      says "Youth".
+- [ ] **Fill in the Soccer Referee entry** in `SITE.experience` — set the real years and the
+      league name (it currently says "During high school" / "Youth soccer leagues").
+- [ ] **Add exact years to the BSA soccer entry** in `SITE.experience` — it just says "Youth".
 - [ ] **Add a résumé PDF** at `assets/Roman-Krzmarzick-Resume.pdf`. Until then the Résumé page
       shows a formatted HTML résumé and "Download PDF" opens the print dialog (choose
       *Save as PDF*) — which also works fine as a permanent solution.
 - [ ] *(Optional)* Replace `assets/img/og.svg` with a 1200×630 **PNG** — some sites
       (LinkedIn, iMessage) won't render SVG link previews.
+
+**Theme:** the site opens in a warm light theme by default; the sun/moon button toggles a
+warm dark mode, and a visitor's choice is remembered. Both palettes live at the top of
+`assets/css/styles.css` (`:root` = dark, `[data-theme="light"]` = light).
 
 There is no contact page and no blog by design — your email is shown in the footer of every
 page and on the homepage, and your LinkedIn, Handshake, and GitHub links sit in the footer.

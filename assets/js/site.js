@@ -95,20 +95,19 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     const meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "light" ? "#fbfbfd" : "#07080d");
+    if (meta) meta.setAttribute("content", theme === "light" ? "#fcf7ef" : "#17130d");
   }
 
   function currentTheme() {
-    return document.documentElement.getAttribute("data-theme") || "dark";
+    return document.documentElement.getAttribute("data-theme") || "light";
   }
 
   function initTheme() {
+    // Default is the warm light theme for a friendly first impression.
+    // A visitor's saved choice always wins; dark is one toggle away.
     let saved = null;
     try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
-    if (saved === "light" || saved === "dark") return applyTheme(saved);
-    const prefersLight =
-      window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-    applyTheme(prefersLight ? "light" : "dark");
+    applyTheme(saved === "dark" ? "dark" : "light");
   }
 
   function toggleTheme() {
@@ -678,7 +677,7 @@
       email: "mailto:" + S.email,
       url: S.url,
       alumniOf: { "@type": "CollegeOrUniversity", name: "St. Ambrose University" },
-      address: { "@type": "PostalAddress", addressLocality: "Davenport", addressRegion: "IA" },
+      address: { "@type": "PostalAddress", addressLocality: "Bettendorf", addressRegion: "IA" },
       sameAs: (S.socials || [])
         .filter((s) => s.href.indexOf("http") === 0)
         .map((s) => s.href),
