@@ -211,8 +211,7 @@
           '<a class="footer-email" href="mailto:' + esc(S.email) + '">' +
             icon("mail") + esc(S.email) +
           "</a>" +
-          "<p>&copy; " + new Date().getFullYear() + " " + esc(S.name || "") +
-            ". Built from scratch — no template.</p>" +
+          "<p>&copy; " + new Date().getFullYear() + " " + esc(S.name || "") + "</p>" +
         "</div>" +
         '<div class="social-row">' + socialLinks() + "</div>" +
       "</div>";
@@ -375,16 +374,6 @@
 
     const bio = $("#bio");
     if (bio) bio.innerHTML = (a.bio || []).map((p) => "<p>" + inline(p) + "</p>").join("");
-
-    const goals = $("#goals");
-    if (goals) {
-      goals.innerHTML = (a.goals || [])
-        .map(
-          (g) =>
-            '<article class="card"><h3>' + esc(g.title) + "</h3><p>" + inline(g.body) + "</p></article>"
-        )
-        .join("");
-    }
 
     const tl = $("#about-timeline");
     if (tl) tl.innerHTML = (a.timeline || []).map(timelineItem).join("");
