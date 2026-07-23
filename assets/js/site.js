@@ -271,29 +271,76 @@
     );
   }
 
-  // Click a project screenshot's play button -> swap in the video.
-  // Delegated once so it works on every page and survives re-renders.
+  // Click a project screenshot's play button -> open the video in a
+  // full-screen lightbox at its own aspect ratio.
+  let lightbox = null;
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    const v = lightbox.querySelector("video");
+    if (v) v.pause();
+    const opener = lightbox._opener;
+    lightbox.remove();
+    lightbox = null;
+    document.body.classList.remove("lightbox-open");
+    if (opener && document.contains(opener)) opener.focus();
+  }
+
+  function openLightbox(btn) {
+    closeLightbox();
+
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", btn.getAttribute("aria-label") || "Project video");
+
+    const video = document.createElement("video");
+    video.src = btn.dataset.video;
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    const poster = btn.parentElement && btn.parentElement.querySelector(".thumb-img");
+    if (poster) video.poster = poster.currentSrc || poster.src;
+
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "lightbox-close";
+    close.setAttribute("aria-label", "Close video");
+    close.innerHTML = icon("close");
+
+    box.appendChild(video);
+    box.appendChild(close);
+    box._opener = btn;
+
+    box.addEventListener("click", (e) => {
+      if (e.target === box) closeLightbox();
+    });
+    close.addEventListener("click", closeLightbox);
+    // Keep keyboard focus inside the dialog (it only has two stops).
+    box.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const stops = [video, close];
+      const i = stops.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); close.focus(); }
+      else if (!e.shiftKey && i === stops.length - 1) { e.preventDefault(); video.focus(); }
+    });
+
+    document.body.appendChild(box);
+    document.body.classList.add("lightbox-open");
+    lightbox = box;
+    close.focus();
+  }
+
   function initVideoThumbs() {
     document.addEventListener("click", (e) => {
       const btn = e.target.closest ? e.target.closest(".play-btn") : null;
       if (!btn) return;
       e.preventDefault();
-
-      // Pause any other project video already playing.
-      $$(".project-thumb video").forEach((v) => v.pause());
-
-      const thumb = btn.closest(".project-thumb");
-      const poster = thumb.querySelector("img");
-      const video = document.createElement("video");
-      video.src = btn.dataset.video;
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      if (poster) video.poster = poster.src;
-      video.setAttribute("aria-label", btn.getAttribute("aria-label") || "Project video");
-      thumb.innerHTML = "";
-      thumb.appendChild(video);
-      video.focus();
+      openLightbox(btn);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
     });
   }
 
@@ -302,18 +349,20 @@
   function projectCard(p) {
     const links = p.links || {};
     let thumb;
-    if (p.image && p.video) {
-      // Screenshot with a play button; clicking swaps in the video (see initVideoThumbs).
+    if (p.image) {
+      // Sharp screenshot at its own aspect ratio, over a blurred copy that
+      // fills the card — so square and widescreen games both look right.
       thumb =
-        '<img src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) +
+        '<img class="thumb-bg" src="' + esc(p.image) + '" alt="" aria-hidden="true"' +
+          ' loading="lazy" decoding="async">' +
+        '<img class="thumb-img" src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) +
           '" loading="lazy" decoding="async">' +
-        '<button type="button" class="play-btn" data-video="' + esc(p.video) +
-          '" aria-label="Play a short video of ' + esc(p.title) + '">' +
-          '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.86-6.86a1.04 1.04 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14Z"/></svg>' +
-        "</button>";
-    } else if (p.image) {
-      thumb = '<img src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) +
-        '" loading="lazy" decoding="async">';
+        (p.video
+          ? '<button type="button" class="play-btn" data-video="' + esc(p.video) +
+            '" aria-label="Play a short video of ' + esc(p.title) + '">' +
+            '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.86-6.86a1.04 1.04 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14Z"/></svg>' +
+            "</button>"
+          : "");
     } else {
       thumb = '<span class="glow"></span><span class="initials" aria-hidden="true">' +
         esc(initialsOf(p.title)) + "</span>";
