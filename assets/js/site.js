@@ -271,14 +271,53 @@
     );
   }
 
+  // Click a project screenshot's play button -> swap in the video.
+  // Delegated once so it works on every page and survives re-renders.
+  function initVideoThumbs() {
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest ? e.target.closest(".play-btn") : null;
+      if (!btn) return;
+      e.preventDefault();
+
+      // Pause any other project video already playing.
+      $$(".project-thumb video").forEach((v) => v.pause());
+
+      const thumb = btn.closest(".project-thumb");
+      const poster = thumb.querySelector("img");
+      const video = document.createElement("video");
+      video.src = btn.dataset.video;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      if (poster) video.poster = poster.src;
+      video.setAttribute("aria-label", btn.getAttribute("aria-label") || "Project video");
+      thumb.innerHTML = "";
+      thumb.appendChild(video);
+      video.focus();
+    });
+  }
+
   /* -------------------------------------------------- shared fragments */
 
   function projectCard(p) {
     const links = p.links || {};
-    const thumb = p.image
-      ? '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async">'
-      : '<span class="glow"></span><span class="initials" aria-hidden="true">' +
+    let thumb;
+    if (p.image && p.video) {
+      // Screenshot with a play button; clicking swaps in the video (see initVideoThumbs).
+      thumb =
+        '<img src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) +
+          '" loading="lazy" decoding="async">' +
+        '<button type="button" class="play-btn" data-video="' + esc(p.video) +
+          '" aria-label="Play a short video of ' + esc(p.title) + '">' +
+          '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.86-6.86a1.04 1.04 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14Z"/></svg>' +
+        "</button>";
+    } else if (p.image) {
+      thumb = '<img src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) +
+        '" loading="lazy" decoding="async">';
+    } else {
+      thumb = '<span class="glow"></span><span class="initials" aria-hidden="true">' +
         esc(initialsOf(p.title)) + "</span>";
+    }
 
     const linkHtml = [
       links.live
@@ -698,6 +737,7 @@
     applyStagger();
     initReveal();
     initCardGlow();
+    initVideoThumbs();
 
     // Fill any element tagged with a content key, e.g. <span data-site="name">
     $$("[data-site]").forEach((el) => {
