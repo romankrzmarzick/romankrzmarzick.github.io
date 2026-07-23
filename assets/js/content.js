@@ -113,6 +113,8 @@ const SITE = {
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
+      image: "assets/media/rps-shoot.png",
+      video: "assets/media/rps-shoot.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/RPSSHOOT",
       },
@@ -126,6 +128,8 @@ const SITE = {
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
+      image: "assets/media/celeste-clone.png",
+      video: "assets/media/celeste-clone.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/CelesteClone",
       },
@@ -139,6 +143,8 @@ const SITE = {
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
+      image: "assets/media/tic-tac-toe.png",
+      video: "assets/media/tic-tac-toe.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/Tic-tac-toe",
       },
@@ -152,6 +158,8 @@ const SITE = {
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
+      image: "assets/media/space-shooter.png",
+      video: "assets/media/space-shooter.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/Space-Shooter",
       },
@@ -164,6 +172,8 @@ const SITE = {
         "The classic, in Python and pygame, against a computer paddle that tracks the ball. The score is written to disk on quit, so it carries over between sessions.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame", "JSON"],
+      image: "assets/media/pong.png",
+      video: "assets/media/pong.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/Pong",
       },
@@ -228,7 +238,7 @@ const SITE = {
         degree: "High School Diploma",
         where: "",
         date: "Graduated 2025",
-        bullets: [],
+        bullets: ["3.6 GPA."],
       },
     ],
   },
