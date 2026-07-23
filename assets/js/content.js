@@ -95,7 +95,7 @@ const SITE = {
      Used on About and Resume. Groups render in order.
      Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
-    { group: "Languages", items: ["Python", "SQL"] },
+    { group: "Languages", items: ["Python", "SQL", "HTML & CSS"] },
     { group: "Tools", items: ["Git & GitHub"] },
   ],
 
