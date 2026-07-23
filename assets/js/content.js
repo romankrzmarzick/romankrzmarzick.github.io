@@ -11,18 +11,18 @@ const SITE = {
   /* ---------- Identity ---------- */
   name: "Roman Krzmarzick",
   initials: "RK",
-  role: "Mechanical Engineering Student",
-  tagline: "Mechanical engineering at St. Ambrose — and code on the side.",
-  location: "Davenport, Iowa",
+  role: "Incoming Engineering Student",
+  tagline: "Incoming engineering student at St. Ambrose. I build things and figure out how they work.",
+  location: "Bettendorf, Iowa",
   email: "romankrzmarzick@gmail.com",
   // Used for SEO tags + sitemap. Change if you add a custom domain.
   url: "https://romankrzmarzick.github.io",
 
   // Short blurb for search results / link previews (keep near 155 characters).
   metaDescription:
-    "Roman Krzmarzick — mechanical engineering student at St. Ambrose University in Davenport, Iowa. Python and pygame projects, plus soccer and lifting.",
+    "Roman Krzmarzick — incoming engineering student at St. Ambrose University, from Bettendorf, Iowa. Self-taught in Python and SQL, and a lifelong soccer player.",
 
-  availability: "Open to summer 2027 internships",
+  availability: "Starting engineering at St. Ambrose — Fall 2026",
 
   /* ---------- Social links ----------
      Delete any line you do not want shown. `icon` must match an icon name
@@ -37,16 +37,16 @@ const SITE = {
   /* ---------- Home page ---------- */
   home: {
     greeting: "Hi, I'm Roman",
-    headlineTop: "Mechanical engineer",
-    headlineBottom: "who writes code.",
+    headlineTop: "Hey, I'm Roman.",
+    headlineBottom: "I build things and figure out how they work.",
     intro:
-      "I'm an incoming freshman at St. Ambrose University in Davenport, Iowa, studying mechanical engineering. I like problems that live where hardware meets software — mechanisms, embedded systems, and the code that makes them do something useful. Off the clock you'll find me on a soccer pitch or under a barbell.",
+      "I'm an incoming engineering student at St. Ambrose University, from Bettendorf, Iowa. I taught myself to program a couple of years ago — mostly Python, and I've been getting good with SQL — and I build little games and tools for the fun of it. Off the clock: soccer, the gym, and time with family.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
-      { label: "Major", value: "B.S. Mechanical Engineering" },
-      { label: "Class of", value: "2030" },
-      { label: "Based in", value: "Davenport, Iowa" },
+      { label: "Studying", value: "Engineering" },
+      { label: "Starting", value: "Fall 2026" },
+      { label: "Home", value: "Bettendorf, Iowa" },
     ],
   },
 
@@ -54,52 +54,52 @@ const SITE = {
   about: {
     // Each string becomes a paragraph.
     bio: [
-      "I'm Roman Krzmarzick, an incoming mechanical engineering freshman at St. Ambrose University in Davenport, Iowa. I chose mechanical engineering because I've always been the person who wants to know what's happening inside the box — how a mechanism carries load, why one design lasts and a nearly identical one doesn't.",
-      "Somewhere along the way I picked up programming, and it stuck. What started as curiosity turned into a habit of building small things end to end and finding out where my assumptions were wrong. Most of that has been games — a platformer, an arcade shooter, Pong — which turn out to be a good teacher: physics, collision, and state machines are engineering problems wearing a costume.",
-      "Outside of school I've played soccer for years and I lift seriously. Both are the same lesson in different clothes: consistent, boring work compounds, and progress is measured over seasons rather than days. That's roughly how I approach engineering too.",
+      "Hey — I'm Roman. I'm from Bettendorf, Iowa, and this fall I'm starting at St. Ambrose University to study engineering. I've always been the kid who takes things apart to see how they work, so engineering felt like the honest choice.",
+      "After I graduated high school in 2025, I spent a year in the Czech Republic. I played soccer there, learned enough of the language to actually hold a conversation, and met people I never would have otherwise. It was the best thing I could have done before college — I came back knowing myself a lot better and genuinely ready to start.",
+      "When I'm not studying or coding, I'm usually playing soccer, in the gym, or hanging out with my brother. I taught myself to program a couple of years ago and haven't stopped — mostly Python, and lately a lot of SQL. I'm early in all of this and I know it, but I like where it's headed, and there's more coming.",
     ],
 
     goals: [
       {
-        title: "Near term",
+        title: "Right now",
         body:
-          "Build a strong foundation in statics, dynamics, and materials, and get hands-on with the design tools the field actually runs on — while keeping my programming sharp on personal projects.",
+          "Start strong at St. Ambrose and keep building on my own — small projects that teach me something I couldn't get from a tutorial.",
       },
       {
-        title: "During college",
+        title: "In college",
         body:
-          "Land an engineering internship, join a hands-on design or competition team, and take on projects where I own something mechanical from concept through testing.",
+          "Get deep into engineering, land my first internship, and join a hands-on team where I can actually build something with other people.",
       },
       {
-        title: "Long term",
+        title: "Down the road",
         body:
-          "Work in design or mechatronics — products where the mechanical and software sides have to be designed together, not bolted on afterward.",
+          "Work on things that mix the physical and the digital — where knowing both the engineering and the code is the whole point.",
       },
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
     timeline: [
       {
-        date: "Fall 2026 — Present",
-        title: "B.S. Mechanical Engineering",
-        org: "St. Ambrose University · Davenport, IA",
+        date: "Fall 2026",
+        title: "Starting at St. Ambrose University",
+        org: "Engineering · Davenport, IA",
         body:
-          "Starting my freshman year. Focused on the engineering core, and looking for design teams and research groups to get involved with early.",
+          "Beginning my freshman year, and looking for teams and projects to get involved with early.",
         current: true,
       },
       {
         date: "2025 — 2026",
-        title: "Building projects on my own",
-        org: "Self-directed",
+        title: "A year in the Czech Republic",
+        org: "Gap year abroad",
         body:
-          "Moved from following tutorials to finishing my own things — a platformer, an arcade shooter, a tic-tac-toe opponent, and my first real Git repositories.",
+          "Lived overseas for a year — played soccer, picked up the language, and grew up a lot. It's why I'm starting college in 2026 instead of 2025, and I wouldn't trade it.",
       },
       {
         date: "2025",
         title: "Graduated high school",
         org: "Pleasant Valley High School",
         body:
-          "Finished coursework in math and science, played soccer, and spent free time teaching myself to code.",
+          "Finished up, kept playing soccer, and spent my free time teaching myself to code.",
       },
     ],
 
@@ -107,9 +107,9 @@ const SITE = {
     interests: [
       "Soccer",
       "Weightlifting",
-      "Game development",
-      "Python",
-      "Cars & mechanisms",
+      "Programming",
+      "Time with my brother",
+      "Travel",
     ],
   },
 
@@ -117,9 +117,8 @@ const SITE = {
      Used on About and Resume. Groups render in order.
      Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
-    { group: "Programming", items: ["Python", "pygame"] },
-    { group: "Tools", items: ["Git & GitHub", "VS Code"] },
-    { group: "Strengths", items: ["Self-teaching", "Finishing what I start", "Problem decomposition"] },
+    { group: "Languages", items: ["Python", "SQL"] },
+    { group: "Tools", items: ["Git & GitHub"] },
   ],
 
   /* ---------- Projects ----------
@@ -127,6 +126,19 @@ const SITE = {
      `image` is optional — leave it out and a gradient card is generated.
      Any link you omit simply doesn't render.                                 */
   projects: [
+    {
+      title: "RPS Shoot",
+      year: "2026",
+      status: "Complete",
+      blurb:
+        "Rock–Paper–Scissors–Lizard–Spock as a card duel against four AI opponents. The toughest one reads your patterns with a Markov chain and gets better the longer you play. Runs in a game window or right in the terminal, both sharing one engine.",
+      tags: ["Game Dev", "Python", "AI"],
+      tech: ["Python", "pygame"],
+      featured: true,
+      links: {
+        repo: "https://github.com/romankrzmarzick/RPSSHOOT",
+      },
+    },
     {
       title: "Celeste Clone",
       year: "2026",
@@ -185,6 +197,18 @@ const SITE = {
      Use: Work · Leadership · Athletics · Research · Volunteer               */
   experience: [
     {
+      // Set the exact years and league name when you get a chance.
+      kind: "Work",
+      date: "During high school",
+      title: "Soccer Referee",
+      org: "Youth soccer leagues",
+      current: false,
+      bullets: [
+        "Refereed youth soccer matches — which mostly meant keeping games moving and staying calm while managing very invested parents on the sideline.",
+        "Good practice at making a quick call under pressure and standing behind it.",
+      ],
+    },
+    {
       kind: "Athletics",
       date: "2023 — 2025",
       title: "Club Soccer",
@@ -227,7 +251,7 @@ const SITE = {
     education: [
       {
         school: "St. Ambrose University",
-        degree: "B.S. Mechanical Engineering",
+        degree: "Engineering (B.S.)",
         where: "Davenport, Iowa",
         date: "2026 — 2030 (expected)",
         bullets: [

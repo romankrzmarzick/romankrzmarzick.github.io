@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Roman Krzmarzick</title>
-<meta name="description" content="About Roman Krzmarzick: mechanical engineering student at St. Ambrose University, self-taught programmer, soccer player, and lifter based in Davenport, Iowa.">
+<meta name="description" content="About Roman Krzmarzick: incoming engineering student at St. Ambrose University, self-taught in Python and SQL, soccer player, and lifter from Bettendorf, Iowa.">
 <link rel="canonical" href="https://romankrzmarzick.github.io/about.html">
-<meta name="theme-color" content="#07080d">
+<meta name="theme-color" content="#fcf7ef">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="About — Roman Krzmarzick">
-<meta property="og:description" content="Mechanical engineering student at St. Ambrose University, self-taught programmer, soccer player, and lifter.">
+<meta property="og:description" content="Incoming engineering student at St. Ambrose, self-taught in Python and SQL, soccer player, and lifter.">
 <meta property="og:url" content="https://romankrzmarzick.github.io/about.html">
 <meta property="og:image" content="https://romankrzmarzick.github.io/assets/img/og.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
   (function () {
     try {
       var t = localStorage.getItem("rk-theme");
-      if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      if (t !== "dark" && t !== "light") t = "light";
       document.documentElement.setAttribute("data-theme", t);
     } catch (e) {}
   })();
@@ -38,7 +38,7 @@
     <div class="container">
       <div data-reveal>
         <span class="eyebrow">About</span>
-        <h1 id="about-heading">Engineering, code,<br><span class="grad-text">and a lot of reps.</span></h1>
+        <h1 id="about-heading">Code, soccer,<br><span class="grad-text">and a fresh start.</span></h1>
       </div>
 
       <div class="grid grid-2" style="margin-top:clamp(2.5rem,5vw,4rem);align-items:start">
@@ -48,10 +48,10 @@
           <h3>At a glance</h3>
           <dl class="skill-groups" style="margin-top:1rem">
             <div class="skill-group"><dt>School</dt><dd>St. Ambrose University</dd></div>
-            <div class="skill-group"><dt>Major</dt><dd>B.S. Mechanical Engineering</dd></div>
-            <div class="skill-group"><dt>Class of</dt><dd>2030</dd></div>
-            <div class="skill-group"><dt>Location</dt><dd>Davenport, Iowa</dd></div>
-            <div class="skill-group"><dt>Also into</dt><dd>Soccer, lifting, building things</dd></div>
+            <div class="skill-group"><dt>Studying</dt><dd>Engineering</dd></div>
+            <div class="skill-group"><dt>Starting</dt><dd>Fall 2026</dd></div>
+            <div class="skill-group"><dt>Home</dt><dd>Bettendorf, Iowa</dd></div>
+            <div class="skill-group"><dt>Into</dt><dd>Soccer, lifting, coding</dd></div>
           </dl>
           <div class="btn-row" style="margin-top:1.5rem">
             <a class="btn btn-ghost btn-sm" href="resume.html">View résumé</a>
@@ -67,8 +67,8 @@
       <div class="section-head" data-reveal>
         <div>
           <span class="eyebrow">Where I'm headed</span>
-          <h2 id="goals-heading">Career goals</h2>
-          <p>Short version: get good at the fundamentals, then go build things that move.</p>
+          <h2 id="goals-heading">What's next</h2>
+          <p>Short version: start strong, keep building, and see how far I can take it.</p>
         </div>
       </div>
       <div class="grid" id="goals" data-stagger="90"></div>
@@ -95,7 +95,7 @@
         <div>
           <span class="eyebrow">Toolbox</span>
           <h2 id="skills-heading">Skills</h2>
-          <p>Some of these are solid, some are actively in progress. I'd rather list what I'm working on than pretend I've mastered it.</p>
+          <p>A short, honest list — the two languages I actually know well. More will get added here as I learn it, not before.</p>
         </div>
       </div>
       <div class="grid" id="skills" data-stagger="80"></div>
