@@ -20,7 +20,7 @@ const SITE = {
 
   // Short blurb for search results / link previews (keep near 155 characters).
   metaDescription:
-    "Roman Krzmarzick — mechanical engineering major at St. Ambrose University, from Bettendorf, Iowa. I code in Python and SQL, and I play soccer.",
+    "Roman Krzmarzick — mechanical engineering major at St. Ambrose University, from Bettendorf, Iowa. I enjoy programming, and I play soccer.",
 
   availability: "Starting at St. Ambrose University — Fall 2026",
 
@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm starting at St. Ambrose University this fall, from Bettendorf, Iowa. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that: soccer and the gym.",
+      "I'm starting at St. Ambrose University this fall, from Bettendorf, Iowa. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that I spend the rest playing soccer and weightlifting",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -55,8 +55,8 @@ const SITE = {
     // Each string becomes a paragraph.
     bio: [
       "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
-      "After graduating from Pleasant Valley in 2025, I spent a year in the Czech Republic. I played soccer, learned some of the language, and met good people. I came back ready for college.",
-      "I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that I play soccer, lift, and spend time with my brother.",
+      "After graduating from Pleasant Valley in 2025, I spent a year in the Czech Republic. I played soccer, learnt the language, and met great people while over there.",
+      "In the mean time I also picked up python and SQL, by building tools and games. Apart from this, I pretty much spend the remainder of my time working out and with friends and family.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -73,7 +73,7 @@ const SITE = {
         title: "Year in the Czech Republic",
         org: "Gap year",
         body:
-          "Lived abroad for a year — played soccer, learned some of the language, met good people.",
+          "I wanted to do something different than the typical highschool to college transition. So I guess I went with the extreme and through myself over there with the help of some kind people. In Czechia, I played soccer, learnt the language to a basic conversation level, and tried to figure out what I wanted in life.",
       },
       {
         date: "2025",
@@ -109,7 +109,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Rock–Paper–Scissors–Lizard–Spock as a card duel against four AI opponents. The toughest one reads your patterns with a Markov chain and gets better the longer you play. Runs in a game window or right in the terminal, both sharing one engine.",
+        "Rock–Paper–Scissors–Lizard–Spock as a card duel against four AI opponents. The toughest one reads your patterns with a Markov chain and gets better the longer you play.",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -124,7 +124,7 @@ const SITE = {
       year: "2026",
       status: "In progress",
       blurb:
-        "A 2D platformer in Python and pygame where the whole point was making the movement feel right — dash, wall jump, wall climb, and coyote time. Renders at 320×180 and scales up for the pixel look.",
+        "A 2D platformer in Python and pygame where the whole point was making the movement feel right — dash, wall jump, wall climb, and coyote time. Renders at 320×180 and scales up for that pixel look.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -139,7 +139,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Tic-tac-toe against the computer, with two opponents: one random, one that wins when it can, blocks when it has to, and takes the center. Built on a state pattern, and the board scales past 3×3.",
+        "Tic-tac-toe against the computer, with two opponents: one random, one that wins when it can, blocks when it has to, and takes the center.",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -154,7 +154,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "A top-down arcade shooter — fly, shoot lasers on a cooldown, dodge asteroids, and survive as long as you can. Sound, music, and frame-by-frame explosions, with every asset preloaded so the loop never touches the disk.",
+        "A top-down arcade shooter — fly, shoot lasers on a cooldown, dodge asteroids, and survive as long as you can.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -169,7 +169,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "The classic, in Python and pygame, against a computer paddle that tracks the ball. The score is written to disk on quit, so it carries over between sessions.",
+        "The classic, in Python and pygame, against a computer paddle that tracks the ball. The score is saved with JSON on quit, so it carries over between sessions.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame", "JSON"],
       image: "assets/media/pong.png",
@@ -191,7 +191,7 @@ const SITE = {
       org: "Youth soccer",
       current: false,
       bullets: [
-        "Refereed youth soccer games — kept matches moving, made calls, and handled sideline parents.",
+        "Refereed youth soccer games — kept matches moving, made calls under pressure, and handled sideline parents.",
       ],
     },
     {
