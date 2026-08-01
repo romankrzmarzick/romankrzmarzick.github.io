@@ -51,14 +51,9 @@ Add an object to `SITE.projects`:
 
 ---
 
-## To-do list for Roman
-
-Everything on the site is real, with no placeholders. The résumé PDF lives at
-`assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time and the Résumé page
-picks it up automatically (regenerate or export a new one, keep the same filename).
-
-- [ ] *(Optional)* Replace `assets/img/og.svg` with a 1200×630 **PNG** — some sites
-      (LinkedIn, iMessage) won't render SVG link previews.
+The résumé PDF lives at `assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time
+and the Résumé page picks it up automatically (regenerate or export a new one, keep the
+same filename).
 
 **Theme:** the site opens in a warm light theme by default; the sun/moon button toggles a
 warm dark mode, and a visitor's choice is remembered. Both palettes live at the top of
