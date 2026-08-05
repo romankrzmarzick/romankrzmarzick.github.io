@@ -20,7 +20,7 @@ const SITE = {
 
   // Short blurb for search results / link previews (keep near 155 characters).
   metaDescription:
-    "Roman Krzmarzick — mechanical engineering major at St. Ambrose University, from Bettendorf, Iowa. Seeking a summer 2027 internship. Python/SQL projects, soccer, and a year lived abroad.",
+    "Roman Krzmarzick — mechanical engineering major at St. Ambrose University, from Bettendorf, Iowa. Seeking a summer 2027 internship. Python projects, soccer, and a year lived abroad.",
 
   availability: "Open to summer 2027 internships",
 
@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that, it's soccer and the gym.",
+      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I taught myself Python, and I build small games and tools to keep learning. Outside of that, it's soccer and the gym.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -56,7 +56,7 @@ const SITE = {
     bio: [
       "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
       "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for Admira Praha, took classes and reached A2 in Czech, and refereed soccer back home the whole time too. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
-      "I taught myself Python and SQL along the way, building small games and tools to keep learning. Longer term I'm interested in controls and guidance — GNC — but right now I'm just focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my family.",
+      "I taught myself Python along the way, building small games and tools to keep learning. I'm interested in controls and automation, and longer term in guidance and navigation work — but right now I'm focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my family.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -96,7 +96,7 @@ const SITE = {
      Used on About and Resume. Groups render in order.
      Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
-    { group: "Languages", items: ["Python", "SQL"] },
+    { group: "Languages", items: ["Python"] },
     { group: "Tools", items: ["Git & GitHub"] },
   ],
 
@@ -187,13 +187,13 @@ const SITE = {
   experience: [
     {
       kind: "Work",
-      date: "2023 — Present",
+      date: "2023 — 2025, 2026 — Present",
       title: "Soccer Referee",
       org: "US Soccer (USSF) · Quad Cities, IA",
       current: true,
       bullets: [
         "Officiate youth matches on my own — reading the game, making calls in real time, and staying level with coaches and parents when calls get contested.",
-        "Three-plus years in, ongoing through the Czech Republic year and back home since.",
+        "Paused during my year in the Czech Republic and picked it back up when I came home.",
       ],
     },
     {
