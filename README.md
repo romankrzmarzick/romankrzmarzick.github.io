@@ -25,7 +25,7 @@ is in there — add a project and it appears on Projects *and* the homepage.
 | Skills lists | `SITE.skills` |
 | Projects | `SITE.projects` |
 | Work / leadership / athletics | `SITE.experience` |
-| Résumé education + PDF path | `SITE.resume` |
+| Resume education + PDF path | `SITE.resume` |
 | Colors, spacing, type | `assets/css/styles.css` (design tokens at the top) |
 
 ### Adding a project
@@ -51,8 +51,8 @@ Add an object to `SITE.projects`:
 
 ---
 
-The résumé PDF lives at `assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time
-and the Résumé page picks it up automatically (regenerate or export a new one, keep the
+The resume PDF lives at `assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time
+and the Resume page picks it up automatically (regenerate or export a new one, keep the
 same filename).
 
 **Theme:** the site opens in a warm light theme by default; the sun/moon button toggles a
@@ -71,7 +71,7 @@ index.html          Home — hero, featured projects, CTA
 about.html          Bio, goals, timeline, skills, interests
 projects.html       Searchable + filterable portfolio
 experience.html     Filterable timeline
-resume.html         Embedded PDF, or printable HTML résumé
+resume.html         Embedded PDF, or printable HTML resume
 404.html            Not-found page
 sitemap.xml         SEO
 robots.txt          SEO

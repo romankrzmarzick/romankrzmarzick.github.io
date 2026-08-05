@@ -56,7 +56,7 @@ const SITE = {
     bio: [
       "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
       "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for Admira Praha, took classes and reached A2 in Czech, and refereed soccer back home the whole time too. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
-      "I taught myself Python and SQL along the way, building small games and tools to keep learning. Longer term I'm interested in controls and guidance — GNC — but right now I'm just focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my brother.",
+      "I taught myself Python and SQL along the way, building small games and tools to keep learning. Longer term I'm interested in controls and guidance — GNC — but right now I'm just focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my family.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
