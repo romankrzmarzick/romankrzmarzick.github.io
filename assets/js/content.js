@@ -85,10 +85,10 @@ const SITE = {
     /* Shown as chips on the About page. */
     interests: [
       "Soccer",
-      "Refereeing",
       "Weightlifting",
       "Programming",
       "Travel",
+      "Languages",
     ],
   },
 
@@ -194,28 +194,6 @@ const SITE = {
       bullets: [
         "Officiate youth matches on my own — reading the game, making calls in real time, and staying level with coaches and parents when calls get contested.",
         "Paused during my year in the Czech Republic and picked it back up when I came home.",
-      ],
-    },
-    {
-      kind: "Athletics",
-      date: "2025 — 2026",
-      title: "Club Soccer — Admira Praha",
-      org: "Czech Republic · Second-division amateur",
-      current: false,
-      bullets: [
-        "Played a full season with a Czech club while living on my own abroad for a year.",
-        "Took Czech classes and reached A2.",
-      ],
-    },
-    {
-      kind: "Athletics",
-      date: "2023 — 2025",
-      title: "Club Soccer — FC United",
-      org: "ECNL/ECRL · Cedar Rapids, IA",
-      current: false,
-      bullets: [
-        "Played junior and senior year in ECNL/ECRL, one of the top national platforms for youth soccer.",
-        "Drove an hour and a half each way to Cedar Rapids for practice, every time.",
       ],
     },
   ],
