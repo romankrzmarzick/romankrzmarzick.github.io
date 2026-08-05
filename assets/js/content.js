@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm starting at St. Ambrose University this fall, from Bettendorf, Iowa. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that, it's soccer and the gym.",
+      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I taught myself Python and SQL, and I build small games and tools to keep learning. Outside of that, it's soccer and the gym.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -55,7 +55,7 @@ const SITE = {
     // Each string becomes a paragraph.
     bio: [
       "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
-      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for Admira Praha, got conversational in Czech, and refereed soccer back home the whole time too. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
+      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for Admira Praha, took classes and reached A2 in Czech, and refereed soccer back home the whole time too. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
       "I taught myself Python and SQL along the way, building small games and tools to keep learning. Longer term I'm interested in controls and guidance — GNC — but right now I'm just focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my brother.",
     ],
 
@@ -73,7 +73,7 @@ const SITE = {
         title: "Year in the Czech Republic",
         org: "Gap year",
         body:
-          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, got conversational in Czech, and figured out what I actually wanted to do next.",
+          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes and reached A2, and figured out what I actually wanted to do next.",
       },
       {
         date: "2025",
@@ -204,6 +204,7 @@ const SITE = {
       current: false,
       bullets: [
         "Played a full season with a Czech club while living on my own abroad for a year.",
+        "Took Czech classes and reached A2.",
       ],
     },
     {
@@ -214,16 +215,7 @@ const SITE = {
       current: false,
       bullets: [
         "Played junior and senior year in ECNL/ECRL, one of the top national platforms for youth soccer.",
-      ],
-    },
-    {
-      kind: "Athletics",
-      date: "2021 — 2025",
-      title: "High School Soccer",
-      org: "Pleasant Valley High School",
-      current: false,
-      bullets: [
-        "Played all four years, alongside club the last two.",
+        "Drove an hour and a half each way to Cedar Rapids for practice, every time.",
       ],
     },
   ],
