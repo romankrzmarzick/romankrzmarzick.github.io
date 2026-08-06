@@ -150,35 +150,6 @@ const SITE = {
         repo: "https://github.com/romankrzmarzick/Tic-tac-toe",
       },
     },
-    {
-      title: "Space Shooter",
-      year: "2026",
-      status: "Complete",
-      blurb:
-        "A top-down arcade shooter — fly, shoot lasers on a cooldown, dodge asteroids, and survive as long as you can.",
-      tags: ["Game Dev", "Python"],
-      tech: ["Python", "pygame"],
-      featured: true,
-      image: "assets/media/space-shooter.png",
-      video: "assets/media/space-shooter.mp4",
-      links: {
-        repo: "https://github.com/romankrzmarzick/Space-Shooter",
-      },
-    },
-    {
-      title: "Pong",
-      year: "2026",
-      status: "Complete",
-      blurb:
-        "The classic, in Python and pygame, against a computer paddle that tracks the ball. The score is saved with JSON on quit, so it carries over between sessions.",
-      tags: ["Game Dev", "Python"],
-      tech: ["Python", "pygame", "JSON"],
-      image: "assets/media/pong.png",
-      video: "assets/media/pong.mp4",
-      links: {
-        repo: "https://github.com/romankrzmarzick/Pong",
-      },
-    },
   ],
 
   /* ---------- Experience ----------
