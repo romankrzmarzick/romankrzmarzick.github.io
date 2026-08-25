@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I taught myself Python, and I build small games and tools to keep learning. Outside of that, it's soccer and the gym.",
+      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I like learning new things, on my own or in the classroom. Outside of that, it's soccer and the gym.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -123,7 +123,7 @@ const SITE = {
     {
       title: "Celeste Clone",
       year: "2026",
-      status: "In progress",
+      status: "Complete",
       blurb:
         "A 2D platformer in Python and pygame where the whole point was making the movement feel right — dash, wall jump, wall climb, and coyote time. Renders at 320×180 and scales up for that pixel look.",
       tags: ["Game Dev", "Python"],
