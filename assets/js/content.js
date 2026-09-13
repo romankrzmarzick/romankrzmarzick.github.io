@@ -40,12 +40,12 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and starting at St. Ambrose University this fall. I like learning new things, on my own or in the classroom. Outside of that, it's soccer and the gym.",
+      "I'm from Bettendorf, Iowa, and I'm currently attending St. Ambrose University. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
       { label: "Major", value: "Mechanical Engineering" },
-      { label: "Starting", value: "Fall 2026" },
+      { label: "Class of", value: "2030" },
       { label: "Home", value: "Bettendorf, Iowa" },
     ],
   },
@@ -54,9 +54,9 @@ const SITE = {
   about: {
     // Each string becomes a paragraph.
     bio: [
-      "I'm from Bettendorf, Iowa, and I'm starting at St. Ambrose University this fall as a mechanical engineering major.",
-      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for Admira Praha, took classes and reached A2 in Czech, and refereed soccer back home the whole time too. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
-      "I taught myself Python along the way, building small games and tools to keep learning. I'm interested in controls and automation, and longer term in guidance and navigation work — but right now I'm focused on building a solid foundation. Outside of that, it's soccer, the gym, and time with my family.",
+      "I'm from Bettendorf, Iowa, and I attend St. Ambrose University as a mechanical engineering major.",
+      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing the world. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
+      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love spending time with my family and friends — they make life a lot easier.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -65,7 +65,7 @@ const SITE = {
         date: "Fall 2026",
         title: "St. Ambrose University",
         org: "Mechanical Engineering · Davenport, IA",
-        body: "Starting my freshman year.",
+        body: "Freshman year, mechanical engineering.",
         current: true,
       },
       {
@@ -96,6 +96,7 @@ const SITE = {
      Used on About and Resume. Groups render in order.
      Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
+    { group: "CAD", items: ["SolidWorks"] },
     { group: "Languages", items: ["Python"] },
     { group: "Tools", items: ["Git & GitHub"] },
   ],
@@ -167,6 +168,16 @@ const SITE = {
         "Paused during my year in the Czech Republic and picked it back up when I came home.",
       ],
     },
+    {
+      kind: "Athletics",
+      date: "Fall 2026 — Present",
+      title: "Men's Soccer",
+      org: "St. Ambrose University",
+      current: true,
+      bullets: [
+        "Play for the St. Ambrose men's soccer team while carrying a full engineering course load.",
+      ],
+    },
   ],
 
   /* ---------- Resume ---------- */
@@ -174,7 +185,7 @@ const SITE = {
     // Drop a PDF at this path and the page embeds it automatically.
     // Until then the page shows a formatted HTML resume you can print to PDF.
     pdf: "assets/Roman-Krzmarzick-Resume.pdf",
-    updated: "August 2026",
+    updated: "September 2026",
     education: [
       {
         school: "St. Ambrose University",
@@ -183,7 +194,7 @@ const SITE = {
         date: "2026 — 2030 (expected)",
         bullets: [
           // Add GPA, scholarships, or honors once you have them.
-          "Incoming freshman, Fall 2026.",
+          "Freshman, Fall 2026 – present.",
         ],
       },
       {
