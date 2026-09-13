@@ -432,6 +432,16 @@
   function pageHome() {
     const h = S.home || {};
 
+    // Hero headline + intro come from content.js (index.html holds a no-JS fallback).
+    const headline = $("#hero-headline");
+    if (headline && h.headlineTop) {
+      headline.innerHTML =
+        esc(h.headlineTop) +
+        (h.headlineBottom ? '<br><span class="grad-text">' + esc(h.headlineBottom) + "</span>" : "");
+    }
+    const intro = $("#hero-intro");
+    if (intro && h.intro) intro.innerHTML = inline(h.intro);
+
     const facts = $("#quick-facts");
     if (facts) {
       facts.innerHTML = (h.quickFacts || [])

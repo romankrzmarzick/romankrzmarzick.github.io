@@ -36,11 +36,11 @@ const SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    greeting: "Roman Krzmarzick",
+    // These three drive the homepage hero. Use **double asterisks** for bold.
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and I'm currently attending St. Ambrose University. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
+      "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },

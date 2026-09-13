@@ -1,32 +1,38 @@
 # romankrzmarzick.github.io
 
-Personal portfolio site for **Roman Krzmarzick** — mechanical engineering student at
-St. Ambrose University, Davenport, Iowa.
+Portfolio site for **Roman Krzmarzick** — mechanical engineering major at St. Ambrose University.
 
 Live at **https://romankrzmarzick.github.io**
 
-Hand-built static site: no framework, no build step, no dependencies. Push to `main` and
-GitHub Pages serves it within a minute.
+Static site: no framework, no build step. Push to `main` and GitHub Pages publishes it within a minute.
+
+---
+
+## The one rule
+
+**This folder — `Documents\romankrzmarzick.github.io` — is the only copy. Edit here, commit here, push here.**
+Don't clone it anywhere else. A second copy is how edits get lost and history gets tangled.
 
 ---
 
 ## Updating the site
 
-**Almost everything lives in one file: [`assets/js/content.js`](assets/js/content.js).**
+**All text lives in one file: [`assets/js/content.js`](assets/js/content.js).**
+Edit it, save, commit, push. Every page rebuilds itself from it.
 
-Open it, edit the text, save, commit, push. The pages rebuild themselves around whatever
-is in there — add a project and it appears on Projects *and* the homepage.
-
-| What you want to change | Where |
+| To change | Edit |
 | --- | --- |
-| Name, tagline, email, LinkedIn/Handshake/GitHub links | `SITE` — top of `content.js` |
-| Homepage intro + quick facts | `SITE.home` |
-| Bio, goals, timeline, interests | `SITE.about` |
-| Skills lists | `SITE.skills` |
+| Name, tagline, email, availability pill, social links | top of `content.js` |
+| Homepage headline, intro, quick facts | `SITE.home` |
+| Bio, timeline, interests | `SITE.about` |
+| Skills | `SITE.skills` |
 | Projects | `SITE.projects` |
-| Work / leadership / athletics | `SITE.experience` |
-| Resume education + PDF path | `SITE.resume` |
-| Colors, spacing, type | `assets/css/styles.css` (design tokens at the top) |
+| Work / athletics | `SITE.experience` |
+| Resume page education | `SITE.resume` |
+| Resume **PDF** | `tools/make_resume.py` (see below) |
+| Colors, spacing, fonts | `assets/css/styles.css` |
+
+Use `**double asterisks**` in `content.js` text for bold.
 
 ### Adding a project
 
@@ -36,65 +42,68 @@ Add an object to `SITE.projects`:
 {
   title: "Project name",
   year: "2027",
-  status: "Complete",           // Complete · Building · In progress · Live
-  blurb: "One or two sentences on what it is and what you learned.",
-  tags: ["Game Dev", "Python"], // becomes a filter chip automatically
+  status: "Complete",
+  blurb: "One or two sentences on what it is.",
+  tags: ["Game Dev", "Python"],          // become filter chips automatically
   tech: ["Python", "pygame"],
-  featured: true,               // shows on the homepage (max 3)
-  image: "assets/img/my-project.jpg",   // optional — omit for a gradient card
-  links: {
-    repo: "https://github.com/...",     // any link you omit just doesn't render
-    live: "https://...",
-  },
+  featured: true,                        // shows on the homepage (max 3)
+  image: "assets/media/my-project.png",  // optional — omit for a gradient card
+  video: "assets/media/my-project.mp4",  // optional — adds a play button
+  links: { repo: "https://github.com/..." },
 }
 ```
 
+Put the screenshot/video in `assets/media/`. Keep videos small (a few MB) — the ones there
+were re-encoded to H.264 at 720p.
+
+### Updating the resume PDF
+
+The PDF is generated, not hand-made. Edit the text in `tools/make_resume.py`, then:
+
+```bash
+pip install reportlab      # once
+python tools/make_resume.py
+```
+
+That rewrites `assets/Roman-Krzmarzick-Resume.pdf`. Commit and push it. The Resume page embeds it.
+Keep the resume and `content.js` telling the same story.
+
 ---
 
-The resume PDF lives at `assets/Roman-Krzmarzick-Resume.pdf` — replace that file any time
-and the Resume page picks it up automatically (regenerate or export a new one, keep the
-same filename).
+## Local preview
 
-**Theme:** the site opens in a warm light theme by default; the sun/moon button toggles a
-warm dark mode, and a visitor's choice is remembered. Both palettes live at the top of
-`assets/css/styles.css` (`:root` = dark, `[data-theme="light"]` = light).
+```bash
+pip install rangehttpserver   # once
+python -m RangeHTTPServer 8123
+```
 
-There is no contact page and no blog by design — your email is shown in the footer of every
-page and on the homepage, and your LinkedIn, Handshake, and GitHub links sit in the footer.
+then open http://localhost:8123. **Use `RangeHTTPServer`, not `http.server`** — the plain one
+can't stream the project videos, so they'll appear broken locally even though they work on GitHub Pages.
 
 ---
 
 ## Structure
 
 ```
-index.html          Home — hero, featured projects, CTA
-about.html          Bio, goals, timeline, skills, interests
-projects.html       Searchable + filterable portfolio
-experience.html     Filterable timeline
-resume.html         Embedded PDF, or printable HTML resume
+index.html          Home
+about.html          Bio, timeline, skills, interests
+projects.html       Searchable, filterable projects with video
+experience.html     Work + athletics timeline
+resume.html         Embeds the PDF
 404.html            Not-found page
-sitemap.xml         SEO
-robots.txt          SEO
-.nojekyll           Tells Pages to serve files as-is
+tools/make_resume.py   Generates the resume PDF
 
 assets/
-  css/styles.css    All styling. Design tokens live at the top.
-  js/content.js     >>> ALL YOUR CONTENT <<<
-  js/site.js        Header, footer, theme, animations, page rendering
-  img/              favicon + link-preview image
+  js/content.js     >>> ALL SITE TEXT <<<
+  js/site.js        Rendering, nav, theme, video lightbox — rarely needs editing
+  css/styles.css    Styling; design tokens at the top
+  media/            Project screenshots and videos
+  img/              Favicon and link-preview image
+  Roman-Krzmarzick-Resume.pdf
 ```
 
-## Local preview
+## Notes
 
-Open `index.html` in a browser, or run a local server for an exact match to production:
-
-```bash
-python -m http.server 8000
-```
-
-## Features
-
-Dark mode by default with a light toggle (remembers your choice, respects system setting) ·
-fully responsive · scroll-reveal animations that honor `prefers-reduced-motion` · keyboard
-accessible with skip link and visible focus rings · Open Graph + JSON-LD structured data ·
-zero dependencies, so it loads instantly.
+- Light theme by default; the sun/moon button toggles a warm dark mode and remembers the choice.
+- No contact page or blog by design — email is in the footer of every page.
+- Fully responsive, keyboard accessible, honors `prefers-reduced-motion`, no dependencies.
