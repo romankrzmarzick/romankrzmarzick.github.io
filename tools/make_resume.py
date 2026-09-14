@@ -77,7 +77,7 @@ section("Projects  ·  github.com/romankrzmarzick")
 entry("RPS Shoot", "Python", None,
       ["Built a Rock-Paper-Scissors-Lizard-Spock card game with 4 AI opponents, from a random "
        "baseline up to a 2nd-order Markov chain that predicts the player's next move from their last two.",
-       "Wrote one shared game engine that drives both a graphical version and a terminal version."])
+       "Drew every card and icon from pygame shapes, no image files, across a menu, match, and stats screen."])
 entry("2D Platformer Game", "Python", None,
       ["Built a platformer with 6 movement mechanics (run, jump, crouch, dash, wall climb, wall jump) "
        "and a timer system that makes the controls feel responsive.",
