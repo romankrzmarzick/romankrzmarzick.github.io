@@ -24,7 +24,7 @@ y = H - 78
 
 c.setFillColor(INK); c.setFont("Helvetica-Bold", 25); c.drawString(M, y, "Roman Krzmarzick"); y -= 20
 c.setFont("Helvetica", 11.5); c.setFillColor(GOLD)
-c.drawString(M, y, "Mechanical Engineering Major  ·  Controls, Automation & Manufacturing Systems"); y -= 16
+c.drawString(M, y, "Mechanical Engineering Major"); y -= 16
 c.setFont("Helvetica", 9); c.setFillColor(MUT)
 c.drawString(M, y, "Bettendorf, Iowa   ·   romankrzmarzick@gmail.com"); y -= 13
 c.drawString(M, y, "github.com/romankrzmarzick   ·   linkedin.com/in/roman-krzmarzick-969500424"); y -= 14
@@ -68,17 +68,29 @@ entry("Pleasant Valley High School", "Graduated 2025", "Bettendorf, Iowa", ["3.6
 
 section("Work Experience")
 entry("Soccer Referee", "2023 – 2025, 2026 – Present", "US Soccer (USSF)  ·  Quad Cities, IA",
-      ["Officiate youth matches independently — real-time calls and staying level with coaches "
-       "and parents when calls get contested. Paused during a year abroad, resumed on returning home."],
+      ["Officiated youth matches solo over 3 seasons — enforced rules in real time and managed "
+       "disputes with coaches and parents on the sideline.",
+       "Paused for a year abroad; resumed on returning home."],
       gap=16)
 
 section("Projects  ·  github.com/romankrzmarzick")
 entry("RPS Shoot", "Python", None,
-      ["Card game against four AI opponents; the hardest one reads your patterns with a Markov chain."])
-entry("Celeste Clone", "Python", None,
-      ["2D platformer focused on movement: dash, wall jump, wall climb, and coyote time."])
+      ["Built a Rock-Paper-Scissors-Lizard-Spock card game with 4 AI opponents, from a random "
+       "baseline up to a 2nd-order Markov chain that predicts the player's next move from their last two.",
+       "Wrote one shared game engine that drives both a graphical version and a terminal version."])
+entry("2D Platformer Game", "Python", None,
+      ["Built a platformer with 6 movement mechanics (run, jump, crouch, dash, wall climb, wall jump) "
+       "and a timer system that makes the controls feel responsive.",
+       "Rendered at 320x180 and scaled 5x for a pixel-art look."])
 entry("Tic-tac-toe", "Python", None,
-      ["Plays against an opponent that wins when it can and blocks when it has to; board scales past 3x3."],
+      ["Built a tic-tac-toe game with 2 computer opponents; the harder one follows a 5-step "
+       "priority (win, block, center, corner, random).",
+       "Designed the board to scale from 3x3 to 5x5 or 7x7 by changing one constant."],
+      gap=16)
+
+section("Extracurriculars")
+entry("Men's Soccer", "Fall 2026 – Present", "St. Ambrose University",
+      ["Train and compete with the team while carrying a full engineering course load."],
       gap=16)
 
 section("Skills")
