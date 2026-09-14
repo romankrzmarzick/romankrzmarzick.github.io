@@ -97,8 +97,9 @@ const SITE = {
      Only list things you'd be comfortable being asked about in an interview.  */
   skills: [
     { group: "CAD", items: ["SolidWorks"] },
-    { group: "Languages", items: ["Python"] },
+    { group: "Programming", items: ["Python"] },
     { group: "Tools", items: ["Git & GitHub"] },
+    { group: "Languages", items: ["Czech (A2)"] },
   ],
 
   /* ---------- Projects ----------

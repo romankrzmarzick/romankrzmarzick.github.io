@@ -20,7 +20,7 @@ INK = HexColor("#231b12"); MUT = HexColor("#64553f"); GOLD = HexColor("#b06a12")
 
 c = canvas.Canvas(OUT, pagesize=letter)
 c.setTitle("Roman Krzmarzick - Resume"); c.setAuthor("Roman Krzmarzick")
-y = H - 78
+y = H - 70
 
 c.setFillColor(INK); c.setFont("Helvetica-Bold", 25); c.drawString(M, y, "Roman Krzmarzick"); y -= 20
 c.setFont("Helvetica", 11.5); c.setFillColor(GOLD)
@@ -28,7 +28,7 @@ c.drawString(M, y, "Mechanical Engineering Major"); y -= 16
 c.setFont("Helvetica", 9); c.setFillColor(MUT)
 c.drawString(M, y, "Bettendorf, Iowa   ·   romankrzmarzick@gmail.com"); y -= 13
 c.drawString(M, y, "github.com/romankrzmarzick   ·   linkedin.com/in/roman-krzmarzick-969500424"); y -= 14
-c.setStrokeColor(GOLD); c.setLineWidth(1.4); c.line(M, y, W - M, y); y -= 26
+c.setStrokeColor(GOLD); c.setLineWidth(1.4); c.line(M, y, W - M, y); y -= 22
 
 def section(title):
     global y
@@ -94,9 +94,11 @@ entry("Men's Soccer", "Fall 2026 – Present", "St. Ambrose University",
       gap=16)
 
 section("Skills")
-for label, val in [("CAD:", "SolidWorks"), ("Languages:", "Python"), ("Tools:", "Git & GitHub")]:
+skills = [("CAD:", "SolidWorks"), ("Programming:", "Python"), ("Tools:", "Git & GitHub"), ("Languages:", "Czech (A2)")]
+col = max(c.stringWidth(l, "Helvetica-Bold", 9.5) for l, _ in skills) + 10
+for label, val in skills:
     c.setFont("Helvetica-Bold", 9.5); c.setFillColor(INK); c.drawString(M, y, label)
-    c.setFont("Helvetica", 9.5); c.drawString(M + 62, y, val); y -= 14
+    c.setFont("Helvetica", 9.5); c.drawString(M + col, y, val); y -= 14
 
 c.save()
 print("wrote resume, bottom y =", y)
