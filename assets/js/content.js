@@ -104,8 +104,28 @@ const SITE = {
   /* ---------- Projects ----------
      `tags` power the filter chips and the search box.
      `image` is optional — leave it out and a gradient card is generated.
+     `video` adds a play button that opens the clip in a lightbox.
+     `gallery` (a list of { src, caption }) adds a button that opens the images
+     in the same lightbox with prev/next. Use one or the other per card.
      Any link you omit simply doesn't render.                                 */
   projects: [
+    {
+      title: "SolidWorks Parts & Drawings",
+      year: "2026",
+      status: "Complete",
+      blurb:
+        "Practice parts modeled in SolidWorks with dimensioned drawings — extrudes, revolves, counterbored holes, fillets, and section views. A mount bracket and a valve lifter, each with a full drawing sheet.",
+      tags: ["CAD"],
+      tech: ["SolidWorks"],
+      featured: true,
+      image: "assets/media/cad-parts.png",
+      gallery: [
+        { src: "assets/media/cad-mount-bracket.png", caption: "Mount bracket — extrude, cut, two counterbored holes, R6 edge fillet, 3 × 45° chamfer." },
+        { src: "assets/media/cad-mount-bracket-drawing.png", caption: "Mount bracket drawing — front, top, and side views, isometric, and a 4:1 detail of the counterbore." },
+        { src: "assets/media/cad-valve-lifter.png", caption: "Valve lifter — revolved profile with stepped diameters, R1 fillet, and a spherical socket in the base." },
+        { src: "assets/media/cad-valve-lifter-drawing.png", caption: "Valve lifter drawing — front view and a hatched section view (C–C) with diameters and radii." },
+      ],
+    },
     {
       title: "RPS Shoot",
       year: "2026",

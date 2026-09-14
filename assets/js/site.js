@@ -75,6 +75,9 @@
     menu: '<path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>',
     close: '<path d="m12 10.59 5.3-5.3 1.41 1.42-5.3 5.29 5.3 5.3-1.42 1.41-5.29-5.3-5.3 5.3-1.41-1.42 5.3-5.29-5.3-5.3L6.7 5.3l5.29 5.3Z"/>',
     moon: '<path d="M12.3 2a9.5 9.5 0 1 0 9.4 11.6 7.5 7.5 0 0 1-9.4-9.4c0-.74.09-1.47.27-2.17A9.6 9.6 0 0 0 12.3 2Z"/>',
+    images: '<path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v10.6l3.6-3.6 3 3 4.4-4.4L19 13.6V5H5Zm14 11.4-3-3-4.4 4.4-3-3L5 18.4V19h14v-2.6ZM8.5 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>',
+    chevronLeft: '<path d="M15.4 6.4 14 5l-7 7 7 7 1.4-1.4L9.8 12l5.6-5.6Z"/>',
+    chevronRight: '<path d="M8.6 6.4 10 5l7 7-7 7-1.4-1.4 5.6-5.6-5.6-5.6Z"/>',
     sun: '<path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-1-14h2v3h-2V1Zm0 19h2v3h-2v-3ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1Zm12.1 12.1 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1Zm2.1-13.5 1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1ZM6.3 16.3l1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1Z"/>',
   };
 
@@ -271,9 +274,11 @@
     );
   }
 
-  // Click a project screenshot's play button -> open the video in a
-  // full-screen lightbox at its own aspect ratio.
+  // Click a project card's play button -> open the video in a full-screen
+  // lightbox at its own aspect ratio. A gallery button opens the card's
+  // images in the same lightbox with prev/next and a caption.
   let lightbox = null;
+  const galleries = [];   // filled by projectCard; buttons point at an index
 
   function closeLightbox() {
     if (!lightbox) return;
@@ -286,15 +291,40 @@
     if (opener && document.contains(opener)) opener.focus();
   }
 
-  function openLightbox(btn) {
+  // Shared shell: dark backdrop, close button, click-outside and Tab trapping.
+  // `stops` are the focusable elements inside, in Tab order.
+  function lightboxShell(btn, label, stops) {
     closeLightbox();
 
     const box = document.createElement("div");
     box.className = "lightbox";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-modal", "true");
-    box.setAttribute("aria-label", btn.getAttribute("aria-label") || "Project video");
+    box.setAttribute("aria-label", label);
 
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "lightbox-close";
+    close.setAttribute("aria-label", "Close");
+    close.innerHTML = icon("close");
+    close.addEventListener("click", closeLightbox);
+
+    box._opener = btn;
+    box.addEventListener("click", (e) => {
+      if (e.target === box) closeLightbox();
+    });
+    box.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const all = stops.concat([close]);
+      const i = all.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); close.focus(); }
+      else if (!e.shiftKey && i === all.length - 1) { e.preventDefault(); all[0].focus(); }
+    });
+
+    return { box, close };
+  }
+
+  function openVideoLightbox(btn) {
     const video = document.createElement("video");
     video.src = btn.dataset.video;
     video.controls = true;
@@ -303,28 +333,11 @@
     const poster = btn.parentElement && btn.parentElement.querySelector(".thumb-img");
     if (poster) video.poster = poster.currentSrc || poster.src;
 
-    const close = document.createElement("button");
-    close.type = "button";
-    close.className = "lightbox-close";
-    close.setAttribute("aria-label", "Close video");
-    close.innerHTML = icon("close");
-
+    const { box, close } = lightboxShell(
+      btn, btn.getAttribute("aria-label") || "Project video", [video]
+    );
     box.appendChild(video);
     box.appendChild(close);
-    box._opener = btn;
-
-    box.addEventListener("click", (e) => {
-      if (e.target === box) closeLightbox();
-    });
-    close.addEventListener("click", closeLightbox);
-    // Keep keyboard focus inside the dialog (it only has two stops).
-    box.addEventListener("keydown", (e) => {
-      if (e.key !== "Tab") return;
-      const stops = [video, close];
-      const i = stops.indexOf(document.activeElement);
-      if (e.shiftKey && i <= 0) { e.preventDefault(); close.focus(); }
-      else if (!e.shiftKey && i === stops.length - 1) { e.preventDefault(); video.focus(); }
-    });
 
     document.body.appendChild(box);
     document.body.classList.add("lightbox-open");
@@ -332,12 +345,71 @@
     close.focus();
   }
 
-  function initVideoThumbs() {
+  function openGalleryLightbox(btn) {
+    const items = galleries[Number(btn.dataset.gallery)] || [];
+    if (!items.length) return;
+    let i = 0;
+
+    const figure = document.createElement("figure");
+    figure.className = "lightbox-figure";
+    const img = document.createElement("img");
+    const cap = document.createElement("figcaption");
+    figure.appendChild(img);
+    figure.appendChild(cap);
+
+    const prev = document.createElement("button");
+    prev.type = "button";
+    prev.className = "lightbox-nav lightbox-prev";
+    prev.setAttribute("aria-label", "Previous image");
+    prev.innerHTML = icon("chevronLeft");
+    const next = document.createElement("button");
+    next.type = "button";
+    next.className = "lightbox-nav lightbox-next";
+    next.setAttribute("aria-label", "Next image");
+    next.innerHTML = icon("chevronRight");
+
+    function show(n) {
+      i = (n + items.length) % items.length;
+      img.src = items[i].src;
+      img.alt = items[i].caption || "";
+      cap.innerHTML =
+        '<span class="lightbox-count">' + (i + 1) + " / " + items.length + "</span>" +
+        esc(items[i].caption || "");
+    }
+    prev.addEventListener("click", () => show(i - 1));
+    next.addEventListener("click", () => show(i + 1));
+
+    const { box, close } = lightboxShell(
+      btn, btn.getAttribute("aria-label") || "Project images",
+      items.length > 1 ? [prev, next] : []
+    );
+    box.classList.add("lightbox-gallery");
+    box.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(i - 1);
+      else if (e.key === "ArrowRight") show(i + 1);
+    });
+
+    box.appendChild(figure);
+    if (items.length > 1) {
+      box.appendChild(prev);
+      box.appendChild(next);
+    }
+    box.appendChild(close);
+    show(0);
+
+    document.body.appendChild(box);
+    document.body.classList.add("lightbox-open");
+    lightbox = box;
+    close.focus();
+  }
+
+  function initLightbox() {
     document.addEventListener("click", (e) => {
-      const btn = e.target.closest ? e.target.closest(".play-btn") : null;
+      const btn = e.target.closest ? e.target.closest(".play-btn, .gallery-btn") : null;
       if (!btn) return;
       e.preventDefault();
-      openLightbox(btn);
+      if (btn.classList.contains("gallery-btn")) openGalleryLightbox(btn);
+      else openVideoLightbox(btn);
     });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeLightbox();
@@ -361,6 +433,13 @@
           ? '<button type="button" class="play-btn" data-video="' + esc(p.video) +
             '" aria-label="Play a short video of ' + esc(p.title) + '">' +
             '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.86-6.86a1.04 1.04 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14Z"/></svg>' +
+            "</button>"
+          : "") +
+        (p.gallery && p.gallery.length
+          ? '<button type="button" class="gallery-btn" data-gallery="' +
+            (galleries.push(p.gallery) - 1) +
+            '" aria-label="View ' + p.gallery.length + ' images of ' + esc(p.title) + '">' +
+            icon("images") + "<span>" + p.gallery.length + " images</span>" +
             "</button>"
           : "");
     } else {
@@ -796,7 +875,7 @@
     applyStagger();
     initReveal();
     initCardGlow();
-    initVideoThumbs();
+    initLightbox();
 
     // Fill any element tagged with a content key, e.g. <span data-site="name">
     $$("[data-site]").forEach((el) => {

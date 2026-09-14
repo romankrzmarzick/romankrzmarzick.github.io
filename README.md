@@ -49,6 +49,9 @@ Add an object to `SITE.projects`:
   featured: true,                        // shows on the homepage (max 3)
   image: "assets/media/my-project.png",  // optional — omit for a gradient card
   video: "assets/media/my-project.mp4",  // optional — adds a play button
+  gallery: [                             // optional — adds an image viewer (CAD card uses this)
+    { src: "assets/media/part.png", caption: "What this picture shows." },
+  ],
   links: { repo: "https://github.com/..." },
 }
 ```
@@ -87,7 +90,7 @@ can't stream the project videos, so they'll appear broken locally even though th
 ```
 index.html          Home
 about.html          Bio, timeline, skills, interests
-projects.html       Searchable, filterable projects with video
+projects.html       Searchable, filterable projects with video / image galleries
 experience.html     Work + athletics timeline
 resume.html         Embeds the PDF
 404.html            Not-found page
@@ -95,7 +98,7 @@ tools/make_resume.py   Generates the resume PDF
 
 assets/
   js/content.js     >>> ALL SITE TEXT <<<
-  js/site.js        Rendering, nav, theme, video lightbox — rarely needs editing
+  js/site.js        Rendering, nav, theme, video + gallery lightbox — rarely needs editing
   css/styles.css    Styling; design tokens at the top
   media/            Project screenshots and videos
   img/              Favicon and link-preview image
