@@ -73,7 +73,7 @@ const SITE = {
         title: "Year in the Czech Republic",
         org: "Gap year",
         body:
-          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes and reached A2, and figured out what I actually wanted to do next.",
+          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes, and figured out what I actually wanted to do next.",
       },
       {
         date: "2025",
@@ -99,7 +99,6 @@ const SITE = {
     { group: "CAD", items: ["SolidWorks"] },
     { group: "Programming", items: ["Python"] },
     { group: "Tools", items: ["Git & GitHub"] },
-    { group: "Languages", items: ["Czech (A2)"] },
   ],
 
   /* ---------- Projects ----------

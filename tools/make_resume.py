@@ -94,7 +94,7 @@ entry("Men's Soccer", "Fall 2026 – Present", "St. Ambrose University",
       gap=16)
 
 section("Skills")
-skills = [("CAD:", "SolidWorks"), ("Programming:", "Python"), ("Tools:", "Git & GitHub"), ("Languages:", "Czech (A2)")]
+skills = [("CAD:", "SolidWorks"), ("Programming:", "Python"), ("Tools:", "Git & GitHub")]
 col = max(c.stringWidth(l, "Helvetica-Bold", 9.5) for l, _ in skills) + 10
 for label, val in skills:
     c.setFont("Helvetica-Bold", 9.5); c.setFillColor(INK); c.drawString(M, y, label)
