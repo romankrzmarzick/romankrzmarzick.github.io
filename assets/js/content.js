@@ -115,8 +115,8 @@ const SITE = {
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
-      image: "assets/media/rps-shoot.png",
-      video: "assets/media/rps-shoot.mp4",
+      image: "assets/media/rps-shoot-2.png",
+      video: "assets/media/rps-shoot-2.mp4",
       links: {
         repo: "https://github.com/romankrzmarzick/RPSSHOOT",
       },
