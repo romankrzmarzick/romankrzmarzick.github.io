@@ -26,7 +26,7 @@ c.setFillColor(INK); c.setFont("Helvetica-Bold", 25); c.drawString(M, y, "Roman 
 c.setFont("Helvetica", 11.5); c.setFillColor(GOLD)
 c.drawString(M, y, "Mechanical Engineering Major"); y -= 16
 c.setFont("Helvetica", 9); c.setFillColor(MUT)
-c.drawString(M, y, "Bettendorf, Iowa   ·   romankrzmarzick@gmail.com"); y -= 13
+c.drawString(M, y, "Bettendorf, Iowa   ·   (563) 370-1673   ·   romankrzmarzick@gmail.com"); y -= 13
 c.drawString(M, y, "github.com/romankrzmarzick   ·   linkedin.com/in/roman-krzmarzick-969500424"); y -= 14
 c.setStrokeColor(GOLD); c.setLineWidth(1.4); c.line(M, y, W - M, y); y -= 22
 

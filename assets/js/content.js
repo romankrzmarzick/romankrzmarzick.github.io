@@ -141,7 +141,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Tic-tac-toe against the computer, with two opponents: one random, one that wins when it can, blocks when it has to, and takes the center.",
+        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover highlights, a results screen, and a board that scales from 3×3 to 7×7.",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
