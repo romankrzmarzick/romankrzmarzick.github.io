@@ -122,11 +122,11 @@ const SITE = {
       },
     },
     {
-      title: "Celeste Clone",
+      title: "2D Platformer Game",
       year: "2026",
       status: "Complete",
       blurb:
-        "A 2D platformer in Python and pygame where the whole point was making the movement feel right — dash, wall jump, wall climb, and coyote time. Renders at 320×180 and scales up for that pixel look.",
+        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales 5× for a pixel-art look.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -164,7 +164,7 @@ const SITE = {
       org: "US Soccer (USSF) · Quad Cities, IA",
       current: true,
       bullets: [
-        "Officiate youth matches on my own — reading the game, making calls in real time, and staying level with coaches and parents when calls get contested.",
+        "Officiate youth matches with a referee crew — reading the game, making calls in real time, and staying level with coaches and parents when calls get contested.",
         "Paused during my year in the Czech Republic and picked it back up when I came home.",
       ],
     },

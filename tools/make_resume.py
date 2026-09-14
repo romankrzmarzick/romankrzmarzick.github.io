@@ -68,7 +68,7 @@ entry("Pleasant Valley High School", "Graduated 2025", "Bettendorf, Iowa", ["3.6
 
 section("Work Experience")
 entry("Soccer Referee", "2023 – 2025, 2026 – Present", "US Soccer (USSF)  ·  Quad Cities, IA",
-      ["Officiated youth matches solo over 3 seasons — enforced rules in real time and managed "
+      ["Officiated youth matches with a referee crew over 3 seasons — enforced rules in real time and managed "
        "disputes with coaches and parents on the sideline.",
        "Paused for a year abroad; resumed on returning home."],
       gap=16)
