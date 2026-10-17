@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
+      "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St[...]",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -55,8 +55,8 @@ const SITE = {
     // Each string becomes a paragraph.
     bio: [
       "I'm from Bettendorf, Iowa, and I attend St. Ambrose University as a mechanical engineering major.",
-      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing the world. That year is where things clicked for me — I got a clearer sense of what I actually wanted, and enough confidence in myself to go after it.",
-      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love spending time with my family and friends — they make life a lot easier.",
+      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing th[...]",
+      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love [...]",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -73,7 +73,7 @@ const SITE = {
         title: "Year in the Czech Republic",
         org: "Gap year",
         body:
-          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes, and figured out what I actually wanted to do next.",
+          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes, and figured out what I actually wanted to do n[...]",
       },
       {
         date: "2025",
@@ -110,21 +110,16 @@ const SITE = {
      Any link you omit simply doesn't render.                                 */
   projects: [
     {
-      title: "SolidWorks Parts & Drawings",
+      title: "Engine Exploded View",
       year: "2026",
       status: "Complete",
       blurb:
-        "Practice parts modeled in SolidWorks with dimensioned drawings — extrudes, revolves, counterbored holes, fillets, and section views. A mount bracket and a valve lifter, each with a full drawing sheet.",
-      tags: ["CAD"],
+        "Exploded animation and screenshot of an engine assembly — an updated visual to showcase the mechanism and internal parts.",
+      tags: ["CAD", "Animation"],
       tech: ["SolidWorks"],
       featured: true,
-      image: "assets/media/cad-parts.png",
-      gallery: [
-        { src: "assets/media/cad-mount-bracket.png", caption: "Mount bracket — extrude, cut, two counterbored holes, R6 edge fillet, 3 × 45° chamfer." },
-        { src: "assets/media/cad-mount-bracket-drawing.png", caption: "Mount bracket drawing — front, top, and side views, isometric, and a 4:1 detail of the counterbore." },
-        { src: "assets/media/cad-valve-lifter.png", caption: "Valve lifter — revolved profile with stepped diameters, R1 fillet, and a spherical socket in the base." },
-        { src: "assets/media/cad-valve-lifter-drawing.png", caption: "Valve lifter drawing — front view and a hatched section view (C–C) with diameters and radii." },
-      ],
+      image: "assets/media/EngineExploSS.png",
+      video: "assets/media/EngineVideo.mp4",
     },
     {
       title: "RPS Shoot",
@@ -146,7 +141,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales 5× for a pixel-art look.",
+        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales[...]",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -161,7 +156,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover highlights, a results screen, and a board that scales from 3×3 to 7×7.",
+        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover hig[...]",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -173,9 +168,7 @@ const SITE = {
     },
   ],
 
-  /* ---------- Experience ----------
-     `kind` groups entries into the filter tabs on the Experience page.
-     Use: Work · Leadership · Athletics · Research · Volunteer               */
+  /* ---------- Experience ---------- */
   experience: [
     {
       kind: "Work",
