@@ -40,7 +40,7 @@ const SITE = {
     headlineTop: "Roman Krzmarzick",
     headlineBottom: "Mechanical engineering major.",
     intro:
-      "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St[...]",
+      "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
     // Small facts under the hero.
     quickFacts: [
       { label: "School", value: "St. Ambrose University" },
@@ -55,8 +55,8 @@ const SITE = {
     // Each string becomes a paragraph.
     bio: [
       "I'm from Bettendorf, Iowa, and I attend St. Ambrose University as a mechanical engineering major.",
-      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing th[...]",
-      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love [...]",
+      "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing the city and learning about a different culture.",
+      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love spending time outside and staying active.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -73,7 +73,7 @@ const SITE = {
         title: "Year in the Czech Republic",
         org: "Gap year",
         body:
-          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes, and figured out what I actually wanted to do n[...]",
+          "Lived on my own for a year instead of going straight from high school to college. Played club soccer for Admira Praha, took Czech classes, and figured out what I actually wanted to do next.",
       },
       {
         date: "2025",
@@ -141,7 +141,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales[...]",
+        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales smoothly while keeping the gameplay readable.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -156,7 +156,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover hig[...]",
+        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover highlighting, and a simple, responsive AI opponent make it feel polished.",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -207,7 +207,7 @@ const SITE = {
         date: "2026 — 2030 (expected)",
         bullets: [
           // Add GPA, scholarships, or honors once you have them.
-          "Freshman, Fall 2026 – present.",
+          "Freshman, Fall 2026 — present.",
         ],
       },
       {
