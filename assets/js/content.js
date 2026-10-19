@@ -56,7 +56,7 @@ const SITE = {
     bio: [
       "I'm from Bettendorf, Iowa, and I attend St. Ambrose University as a mechanical engineering major.",
       "After graduating from Pleasant Valley in 2025, I spent a year living on my own in the Czech Republic. I played club soccer there for a team called Admira Praha and enjoyed my time seeing the city and learning about a different culture.",
-      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love spending time outside and staying active.",
+      "I got interested in a lot of things along the way: I taught myself to program by building games, and I developed a real drive to understand how the world works. Outside of all that, I love staying active and spending time outside.",
     ],
 
     /* Personal timeline. `current: true` highlights the dot in gold. */
@@ -141,7 +141,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales smoothly while keeping the gameplay readable.",
+        "A platformer with six movement mechanics — run, jump, crouch, dash, wall climb, wall jump — and a timer system that makes the controls feel responsive. Renders at 320×180 and scales cleanly without losing readability.",
       tags: ["Game Dev", "Python"],
       tech: ["Python", "pygame"],
       featured: true,
@@ -156,7 +156,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover highlighting, and a simple, responsive AI opponent make it feel polished.",
+        "Tic-tac-toe against the computer with two difficulties: Easy plays random squares, Smart wins when it can, blocks when it has to, then takes the center and corners. Start menu, hover highlighting, and a clean UI make it feel polished.",
       tags: ["Game Dev", "Python", "AI"],
       tech: ["Python", "pygame"],
       featured: true,
