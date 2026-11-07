@@ -38,7 +38,7 @@ const SITE = {
   home: {
     // These three drive the homepage hero. Use **double asterisks** for bold.
     headlineTop: "Roman Krzmarzick",
-    headlineBottom: "Mechanical engineering major.",
+    headlineBottom: "",
     intro:
       "I'm from Bettendorf, Iowa, and I'm currently attending **St. Ambrose University**. I like learning new things and working with others in the classroom. Outside of that, I play soccer for St. Ambrose and enjoy working out.",
     // Small facts under the hero.
@@ -114,7 +114,7 @@ const SITE = {
       year: "2026",
       status: "Complete",
       blurb:
-        "Exploded animation and screenshot of an engine assembly — an updated visual to showcase the mechanism and internal parts.",
+        "An animation of an engine.",
       tags: ["CAD", "Animation"],
       tech: ["SolidWorks"],
       featured: true,
@@ -198,7 +198,7 @@ const SITE = {
     // Drop a PDF at this path and the page embeds it automatically.
     // Until then the page shows a formatted HTML resume you can print to PDF.
     pdf: "assets/Roman-Krzmarzick-Resume.pdf",
-    updated: "September 2026",
+    updated: "November 2026",
     education: [
       {
         school: "St. Ambrose University",

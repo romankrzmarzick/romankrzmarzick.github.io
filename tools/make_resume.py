@@ -23,8 +23,6 @@ c.setTitle("Roman Krzmarzick - Resume"); c.setAuthor("Roman Krzmarzick")
 y = H - 70
 
 c.setFillColor(INK); c.setFont("Helvetica-Bold", 25); c.drawString(M, y, "Roman Krzmarzick"); y -= 20
-c.setFont("Helvetica", 11.5); c.setFillColor(GOLD)
-c.drawString(M, y, "Mechanical Engineering Major"); y -= 16
 c.setFont("Helvetica", 9); c.setFillColor(MUT)
 c.drawString(M, y, "Bettendorf, Iowa   ·   (563) 370-1673   ·   romankrzmarzick@gmail.com"); y -= 13
 c.drawString(M, y, "github.com/romankrzmarzick   ·   linkedin.com/in/roman-krzmarzick-969500424"); y -= 14
@@ -68,29 +66,29 @@ entry("Pleasant Valley High School", "Graduated 2025", "Bettendorf, Iowa", ["3.6
 
 section("Work Experience")
 entry("Soccer Referee", "2023 – 2025, 2026 – Present", "US Soccer (USSF)  ·  Quad Cities, IA",
-      ["Officiated youth matches with a referee crew over 3 seasons — enforced rules in real time and managed "
-       "disputes with coaches and parents on the sideline.",
-       "Paused for a year abroad; resumed on returning home."],
+      ["Refereed youth soccer games with a crew for 3 seasons. Enforced the rules and handled disputes "
+       "with coaches and parents.",
+       "Took a break for a year abroad and started again when I came home."],
       gap=16)
 
 section("Projects  ·  github.com/romankrzmarzick")
+entry("4-Cylinder Engine", "SolidWorks", None,
+      ["Modeled the pistons, piston rings, piston pins, connecting rods, rod caps, and crankshaft of a "
+       "4-cylinder engine.",
+       "Put the parts together in a working assembly, then made an exploded view, a motion video, and "
+       "detailed drawings."])
 entry("RPS Shoot", "Python", None,
-      ["Built a Rock-Paper-Scissors-Lizard-Spock card game with 4 AI opponents, from a random "
-       "baseline up to a 2nd-order Markov chain that predicts the player's next move from their last two.",
-       "Drew every card and icon from pygame shapes, no image files, across a menu, match, and stats screen."])
+      ["Built a Rock Paper Scissors Lizard Spock card game with 4 computer opponents. The hardest one "
+       "uses a Markov chain to predict the player's next move.",
+       "Drew every card and icon with code, using no image files."])
 entry("2D Platformer Game", "Python", None,
-      ["Built a platformer with 6 movement mechanics (run, jump, crouch, dash, wall climb, wall jump) "
-       "and a timer system that makes the controls feel responsive.",
-       "Rendered at 320x180 and scaled 5x for a pixel-art look."])
-entry("Tic-tac-toe", "Python", None,
-      ["Built a tic-tac-toe game with 2 computer opponents; the harder one follows a 5-step "
-       "priority (win, block, center, corner, random).",
-       "Designed the board to scale from 3x3 to 5x5 or 7x7 by changing one constant."],
+      ["Built a platformer where the player can run, jump, crouch, dash, wall climb, and wall jump.",
+       "Added timers that make the controls feel responsive, and scaled the game up 5x for a pixel art look."],
       gap=16)
 
 section("Extracurriculars")
 entry("Men's Soccer", "Fall 2026 – Present", "St. Ambrose University",
-      ["Train and compete with the team while carrying a full engineering course load."],
+      ["Train and compete with the team while taking a full engineering course load."],
       gap=16)
 
 section("Skills")
